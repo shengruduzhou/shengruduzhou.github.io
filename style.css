@@ -13,9 +13,8 @@ body {
 .wrapper {
     max-width: 900px;
     margin: 0 auto;
-    padding: 40px 24px; 
+    padding: 10px 24px;
     display: flex;
-    flex-direction: row !important;
     gap: 40px;
     align-items: flex-start; 
     min-width: 600px;
@@ -26,10 +25,8 @@ body {
 /* sidebar 间距和内容居中 */
 .sidebar {
     position: sticky; /* 尝试 sticky 定位 */
-    top: 40px;       
-    left: 20px;
+    top: 40px;
     width: 280px;
-    margin-right: 0;
     text-align: center;
     padding: 40px 30px;
     background-color: #1e1e1e;
@@ -106,7 +103,7 @@ body {
 }
 
 .sidebar p {
-    font-size: 1.2em;
+    font-size: 1em;
     color: #aaa;
     margin-bottom: 30px;
     text-align:left;
@@ -169,9 +166,6 @@ body {
 /* 主内容区宽度、居中和间距 */
 .content {
     position: sticky;
-    margin-left: 360px; /* sidebar (280px) + left (20px) + gap (40px) + 一些额外空间 */
-    margin-top: 0;
-    top: 40px;
     margin-bottom: 20px;
     padding: 40px;
     background-color: #1e1e1e;
@@ -179,7 +173,6 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     overflow-x: auto;
     z-index: 1;
-    flex:1;
 }
 
 .content:hover {
