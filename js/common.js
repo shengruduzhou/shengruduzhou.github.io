@@ -13,24 +13,6 @@ class PageInitializer {
         this.initCursorTrail();
     }
 
-    // 浏览时间计时器
-    initTimeDisplay() {
-        const timeDisplay = document.createElement('div');
-        timeDisplay.className = 'time-display';
-        document.body.appendChild(timeDisplay);
-
-        const updateTime = () => {
-            const currentTime = new Date();
-            const timeSpent = Math.floor((currentTime - this.startTime) / 1000);
-            const hours = Math.floor(timeSpent / 3600);
-            const minutes = Math.floor((timeSpent % 3600) / 60);
-            const seconds = timeSpent % 60;
-            timeDisplay.textContent = `Browsing Time: ${hours}h ${minutes}m ${seconds}s`;
-        };
-
-        setInterval(updateTime, 1000);
-    }
-
     // 动态背景
     initDynamicBackground() {
         if (!document.querySelector('.dynamic-background')) {

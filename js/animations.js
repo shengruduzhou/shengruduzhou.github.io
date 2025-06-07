@@ -1,21 +1,5 @@
 // 页面加载动画
 document.addEventListener('DOMContentLoaded', () => {
-    // 添加浏览时间计时器
-    const startTime = new Date();
-    const timeDisplay = document.createElement('div');
-    timeDisplay.className = 'time-display';
-    document.body.appendChild(timeDisplay);
-
-    function updateTime() {
-        const currentTime = new Date();
-        const timeSpent = Math.floor((currentTime - startTime) / 1000);
-        const hours = Math.floor(timeSpent / 3600); 
-        const minutes = Math.floor((timeSpent % 3600) / 60);
-        const seconds = timeSpent % 60;
-        timeDisplay.textContent = `Browsing Time: ${hours}h ${minutes}m ${seconds}s`;
-    }
-    setInterval(updateTime, 1000);
-
     // 创建动态背景
     const background = document.createElement('div');
     background.className = 'dynamic-background';
