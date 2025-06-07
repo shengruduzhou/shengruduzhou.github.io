@@ -9,6 +9,9 @@ tags: ["Information", "Myself", "experience"]
 
 <h3>{{ page.title }}</h3>
 <h4>{{ page.date | date: "%b %d, %Y" }}</h4>
+
+### 🌐 About Me
+
 <p align="center">
   <em>M.S. in Computer Science at Sophia University | Machine Learning & Full Stack </em>
   <br />
@@ -19,7 +22,7 @@ tags: ["Information", "Myself", "experience"]
 
 ---
 
-🌟I am a Master's student at Sophia University's Graduate School of Science and Engineering, specializing in Computer Science (Information Science). 
+🧠I am a Master's student at Sophia University's Graduate School of Science and Engineering, specializing in Computer Science (Information Science). 
 
 - 🎓 **Education**: B.S. from Teikyo University (Apr 2021 - Mar 2025) & M.S. candidate at Sophia University (Apr 2025 - Mar 2027).
   - **Relevant Coursework**: Data Structures & Algorithms, Formal Languages & Automata, Information Theory, Database Systems, Computer Architecture, Computer Organization, Operating Systems, Digital Circuits, Analog Circuits.
@@ -69,7 +72,7 @@ tags: ["Information", "Myself", "experience"]
 
 ---
 
-### 📊 My GitHub Stats
+### 📊 GitHub Stats
 
 <p align="center">
   <a href="https://github.com/shengruduzhou" target="_blank" rel="noreferrer">
@@ -80,7 +83,7 @@ tags: ["Information", "Myself", "experience"]
 
 ---
 
-### 📫 Connect with Me
+### 📫 Connect Me
 
 <p align="left">
     <a href="mailto:shanhefu@gmail.com" target="blank"><img align="center" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="shanhefu@gmail.com" /></a>
