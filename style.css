@@ -171,6 +171,7 @@ body {
     position: sticky;
     margin-left: 360px; /* sidebar (280px) + left (20px) + gap (40px) + 一些额外空间 */
     margin-top: 0;
+    top: 40px;
     margin-bottom: 20px;
     padding: 40px;
     background-color: #1e1e1e;
@@ -178,6 +179,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     overflow-x: auto;
     z-index: 1;
+    flex:1;
 }
 
 .content:hover {
