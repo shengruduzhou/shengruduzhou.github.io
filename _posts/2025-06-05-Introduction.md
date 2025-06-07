@@ -10,8 +10,9 @@ tags: ["Information", "Myself", "experience"]
 <h3>{{ page.title }}</h3>
 <h4>{{ page.date | date: "%b %d, %Y" }}</h4>
 
-### 🌐 About Me
-
+<h1 align="center">
+  Hi there, I'm Shan Hefu (タン カクフ) 👋
+</h1>
 <p align="center">
   <em>M.S. in Computer Science at Sophia University | Machine Learning & Full Stack </em>
   <br />
@@ -21,6 +22,7 @@ tags: ["Information", "Myself", "experience"]
 </p>
 
 ---
+### 🌐 About Me
 
 🧠I am a Master's student at Sophia University's Graduate School of Science and Engineering, specializing in Computer Science (Information Science). 
 
