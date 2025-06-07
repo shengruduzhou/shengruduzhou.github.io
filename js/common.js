@@ -87,7 +87,7 @@ class PageInitializer {
         // Vision装饰图插入到.content第一个h2下方
         const content = document.querySelector('.content');
         if (content) {
-            const h2 = content.querySelector('h2');
+            const h2 = content.querySelector('h2,h3');
             if (h2 && !content.querySelector('.anime-decoration')) {
                 const visionDecoration = document.createElement('div');
                 visionDecoration.className = 'anime-decoration vision-anim';
