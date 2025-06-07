@@ -72,9 +72,9 @@ tags: ["Information", "Myself", "experience"]
 ### 📊 My GitHub Stats
 
 <p align="center">
-    <a href="https://github.com/shengruduzhou" target="_blank" rel="noreferrer">
-    <img src="https://github-readme-stats.vercel.app/api?username=shengruduzhou&show_icons=true&locale=en&theme=tokyonight&count_private=true" alt="shengruduzhou's github stats"/>
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shengruduzhou&layout=compact&locale=en&theme=tokyonight" alt="shengruduzhou's top langs"/>
+  <a href="https://github.com/shengruduzhou" target="_blank" rel="noreferrer">
+    <a href="http://shengruduzhou.github.io/" target="blank"><img src="https://github-readme-stats.vercel.app/api?username=shengruduzhou&show_icons=true&locale=en&theme=tokyonight&count_private=true" alt="shengruduzhou's github stats"/></a>
+    <a href="http://shengruduzhou.github.io/" target="blank"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shengruduzhou&layout=compact&locale=en&theme=tokyonight" alt="shengruduzhou's top langs"/></a>
   </a>
 </p>
 
