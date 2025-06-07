@@ -1,58 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Page</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-</head>
-<body>
-    <div class="anime-decoration"></div>
-    <div class="sidebar">
-        <img src="picture/icon.jpg" alt="Your Avatar" class="avatar" id="home-link">
-        <h1>渡 Ferry</h1>
-        <h2>暗闇で生きている良かった</h2>
-        <p>
-            I am currently a Master's student (Master of Engineering) at Sophia University in Tokyo, Japan.<br>
-            <br>@islab.sophia<br>
-        </p>
-        <div class="social-links">
-            <a href="https://github.com/shengruduzhou" target="_blank">
-                <img src="picture/GitHub.png" class="social-icon">GitHub
-            </a>
-            <a href="https://twitter.com/dudu2027377" target="_blank">
-                <img src="picture/Twitter.png" class="social-icon">Twitter
-            </a>
-            <a href="mailto:shanhefu@gmail.com">
-                <img src="picture/Email.png" class="social-icon">Email
-            </a>
+---
+layout: default
+---
+<h2>Posts & Projects</h2>
+<div class="posts-container">
+  {% for post in site.posts %}
+    <div class="post-item">
+        <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
+        <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        {% if post.description %}
+          <p class="post-description">{{ post.description }}</p>
+        {% else %}
+          <p class="post-description">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+        {% endif %}
+        <div class="post-categories">
+          {% for category in post.categories %}
+            <span class="category-tag">{{ category }}</span>
+          {% endfor %}
+        </div>
+        <div class="post-tags">
+          {% for tag in post.tags %}
+            <span class="tag-tag">{{ tag }}</span>
+          {% endfor %}
         </div>
     </div>
-    <div class="content">
-        <h2>Posts & Projects</h2>
-        <div class="posts-container">
-            </div>
-        </div>
-
-    <div class="menu-toggle">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
-
-    <nav class="nav-menu">
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../categories.html">categories</a></li>
-            <li><a href="../tags.html">Tags</a></li>
-            <li><a href="#" id="top-page-link">Top of Page</a></li>
-        </ul>
-    </nav>
-</body>
-    <script src="js/posts-data.js"></script>
-    <script src="js/common.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/index&posts.js"></script>
-    <script src="js/animations.js"></script>
-</html>
+  {% endfor %}
+</div>
