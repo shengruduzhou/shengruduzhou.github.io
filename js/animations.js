@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 侧边栏动画
     anime({
-        targets: '.sidebar',
+        targets: '.sidebar-inner',
         translateX: [-100, 0],
         opacity: [0, 1],
         duration: 1000,
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 内容区域动画
     anime({
-        targets: '.content',
+        targets: '.content-inner',
         translateX: [100, 0],
         opacity: [0, 1],
         duration: 1000,

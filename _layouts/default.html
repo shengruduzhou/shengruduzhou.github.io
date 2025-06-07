@@ -9,10 +9,12 @@
 </head>
 <body>
     <div class="anime-decoration"></div>
-    {% include sidebar.html %}
-    <div class="wrapper">
+    <div class="wrapper"></div>
+        {% include sidebar.html %}
         <div class="content">
-            {{ content }}
+            <div class="content-inner">
+                {{ content }}
+            </div>
         </div>
     </div>
 
