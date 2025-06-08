@@ -1,19 +1,5 @@
 // 页面加载动画
 document.addEventListener('DOMContentLoaded', () => {
-    // 创建动态背景
-    const background = document.createElement('div');
-    background.className = 'dynamic-background';
-    document.body.insertBefore(background, document.body.firstChild);
-
-    // 背景动画
-    anime({
-        targets: '.dynamic-background',
-        backgroundPosition: ['0% 0%', '100% 100%'],
-        duration: 20000,
-        easing: 'linear',
-        loop: true
-    });
-
     // 侧边栏动画
     anime({
         targets: '.sidebar-inner',
