@@ -9,8 +9,8 @@
 </head>
 <body>
     <div id="tsparticles"></div>
-    <div class="anime-decoration"></div>
-    <div class="wrapper"></div>
+    <header id="hero-header" class="anime-decoration"></header>
+    <main id="content-wrapper">
         <div class="sidebar">
     <div class="sidebar-inner"> 
         <img src="/picture/icon.jpg" alt="Your Avatar" class="avatar" id="home-link">
@@ -83,13 +83,31 @@
 </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <div class="menu-toggle">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
+    <footer id="page-footer">
+        <div class="footer-grid">
+            <div class="footer-left">
+                <p>Powered by <strong>Jekyll</strong></p>
+                <p>Theme by <strong>渡 Ferry</strong></p>
+            </div>
+            <div class="footer-center">
+                <p>&copy; 2025 渡 Ferry. All Rights Reserved.</p>
+                <p id="runtime_span"></p> </div>
+            <div class="footer-right">
+            <div class="visitor-stats">
+                <span class="stat-item">
+                    <span class="stat-label">Unique Visitor</span>
+                    <span id="unique-visitors" class="stat-value"><i class="loading-icon"></i></span>
+                </span>
+                <span class="stat-item">
+                    <span class="stat-label">Page View</span>
+                    <span id="page-views" class="stat-value"><i class="loading-icon"></i></span>
+                </span>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <nav class="nav-menu">
     <ul>
@@ -99,6 +117,12 @@
         <li><a href="#" id="top-page-link">Top of Page</a></li>
     </ul>
 </nav>
+    <div class="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
 </body>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>

@@ -9,23 +9,47 @@
 </head>
 <body>
     <div id="tsparticles"></div>
-    <div class="anime-decoration"></div>
-    <div class="wrapper"></div>
+    <header id="hero-header" class="anime-decoration"></header>
+    <main id="content-wrapper">
         {% include sidebar.html %}
         <div class="content">
             <div class="content-inner">
                 {{ content }}
             </div>
         </div>
-    </div>
+    </main>
 
+    <footer id="page-footer">
+        <div class="footer-grid">
+            <div class="footer-left">
+                <p>Powered by <strong>Jekyll</strong></p>
+                <p>Theme by <strong>渡 Ferry</strong></p>
+            </div>
+            <div class="footer-center">
+                <p>&copy; 2025 {{ site.title }}. All Rights Reserved.</p>
+                <p id="runtime_span"></p> </div>
+            <div class="footer-right">
+            <div class="visitor-stats">
+                <span class="stat-item">
+                    <span class="stat-label">Unique Visitor</span>
+                    <span id="unique-visitors" class="stat-value"><i class="loading-icon"></i></span>
+                </span>
+                <span class="stat-item">
+                    <span class="stat-label">Page View</span>
+                    <span id="page-views" class="stat-value"><i class="loading-icon"></i></span>
+                </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    {% include nav-menu.html %}
     <div class="menu-toggle">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
     </div>
 
-    {% include nav-menu.html %}
 </body>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>

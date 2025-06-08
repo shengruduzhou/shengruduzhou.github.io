@@ -225,15 +225,6 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     });
 });
 
-// 滚动动画
-window.addEventListener('scroll', () => {
-    anime({
-        targets: '.content',
-        translateY: -window.scrollY * 0.1,
-        duration: 1000,
-        easing: 'easeOutQuad'
-    });
-});
 
 // 鼠标跟随效果
 let lastTrailTime = 0;
@@ -264,4 +255,74 @@ document.addEventListener('mousemove', (e) => {
             trailDot.remove();
         }
     });
+});
+
+// 运行时间统计
+function show_runtime() {
+    const runtimeSpan = document.getElementById("runtime_span");
+    if(!runtimeSpan) return;
+
+    // 建站日期
+    const siteCreationDate = new Date("2025-05-15T23:42:33+09:00"); 
+
+    // 使用 setInterval 来每秒更新一次
+    setInterval(() => {
+        const now = new Date();
+        const diff = now.getTime() - siteCreationDate.getTime();
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        runtimeSpan.innerHTML = `RUN TIME: ${days}Day${hours}Hour${minutes}Moment${seconds}Second`;
+    }, 1000);
+}
+
+// CountAPI 访客统计脚本
+function fetchVisitorStats() {
+    const namespace = "shengruduzhou.github.io"; // ID
+    const pvElement = document.getElementById("page-views");
+    const uvElement = document.getElementById("unique-visitors");
+
+    if (!pvElement || !uvElement) {
+        console.log("Visitor count elements not found on this page.");
+        return;
+    }
+
+    // 获取总浏览量 (PV)
+    fetch(`https://api.countapi.xyz/hit/${namespace}/pageviews`)
+        .then(res => res.json())
+        .then(data => {
+            pvElement.innerHTML = data.value;
+        })
+        .catch(error => {
+            console.error('Error fetching PV:', error);
+            pvElement.innerHTML = 'N/A';
+        });
+
+    // 获取独立访客 (UV)
+    const uvKey = 'user-has-visited';
+    const userHasVisited = localStorage.getItem(uvKey);
+    const apiEndpoint = userHasVisited 
+        ? `https://api.countapi.xyz/get/${namespace}/uniquevisitors`
+        : `https://api.countapi.xyz/hit/${namespace}/uniquevisitors`;
+
+    fetch(apiEndpoint)
+        .then(res => res.json())
+        .then(data => {
+            uvElement.innerHTML = data.value;
+            if (!userHasVisited) {
+                localStorage.setItem(uvKey, 'true');
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching UV:', error);
+            uvElement.innerHTML = 'N/A';
+        });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    show_runtime();
+    fetchVisitorStats();
 });
