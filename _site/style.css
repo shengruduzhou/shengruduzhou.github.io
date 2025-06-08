@@ -37,7 +37,7 @@ body {
     width: 280px;
     text-align: center;
     padding: 40px 30px;
-    background-color: #1e1e1e;
+    background-color: rgba(30, 30, 30, 0.4); 
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     overflow-x: auto;
@@ -47,6 +47,8 @@ body {
     align-items: center;
     justify-content: flex-start;
     z-index: 1;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
 }
 
 
@@ -177,11 +179,13 @@ body {
     margin-bottom: 20px;
     margin-left: 360px;
     padding: 40px;
-    background-color: #1e1e1e;
+    background-color: rgba(30, 30, 30, 0.4); 
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     overflow-x: auto;
     z-index: 1;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
 }
 
 .content:hover {

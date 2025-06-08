@@ -1,7 +1,6 @@
 // 页面加载动画
 document.addEventListener('DOMContentLoaded', () => {
     tsParticles.load('tsparticles', {
-      // 保持深色背景
       background: {
         color: {
           value: '#121212'
@@ -14,10 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
             enable: true,
             mode: 'push'
           },
-          // 这里是关键的交互效果
           onHover: {
             enable: true,
-            mode: 'grab' // 改为 "grab" 模式
+            mode: 'grab'
           },
           resize: true
         },
@@ -25,26 +23,23 @@ document.addEventListener('DOMContentLoaded', () => {
           push: {
             quantity: 4
           },
-          // "grab" 模式的配置
           grab: {
-            distance: 200, // 抓取距离
+            distance: 200,
             links: {
-              opacity: 1 // 抓取时连接线的不透明度
+              opacity: 1
             }
           }
         }
       },
       particles: {
-        // 使用你网站的金色作为粒子颜色
         color: {
           value: '#FFD770' 
         },
-        // 连接线使用你网站的蓝色
         links: {
           color: '#4169e1',
           distance: 150,
           enable: true,
-          opacity: 0.4, // 连接线初始不透明度
+          opacity: 0.4,
           width: 1
         },
         collisions: {
@@ -56,8 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
           outModes: {
             default: 'bounce'
           },
-          random: true, // 让移动更随机
-          speed: 1, // 降低速度，让星座效果更优雅
+          random: true,
+          speed: 1,
           straight: false
         },
         number: {
@@ -65,9 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
             enable: true,
             area: 800
           },
-          value: 100 // 稍微增加粒子数量以形成更丰富的网络
+          value: 100
         },
-        // 粒子呼吸灯/闪烁效果
         opacity: {
           value: 0.5,
           random: true,
@@ -82,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
           type: 'circle'
         },
         size: {
-          value: { min: 1, max: 3 }, // 粒子大小
+          value: { min: 1, max: 3 },
           random: true
         }
       },
