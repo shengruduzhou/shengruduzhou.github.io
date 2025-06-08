@@ -76,7 +76,6 @@ document.querySelectorAll('.post-item').forEach(item => {
 const menuToggle = document.querySelector('.menu-toggle');
 const navMenu = document.querySelector('.nav-menu');
 let overlay = null;
-let closeBtn = null;
 
 function createOverlay() {
     overlay = document.createElement('div');
@@ -94,16 +93,35 @@ function createCloseButton() {
 }
 
 function openMenu() {
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.className = 'menu-overlay';
+        document.body.appendChild(overlay);
+        overlay.addEventListener('click', closeMenu);
+    }
+
     menuToggle.classList.add('toggle');
     navMenu.classList.add('nav-active');
-
     overlay.addEventListener('click', closeMenu);
-    closeBtn.addEventListener('click', closeMenu);
+
+    requestAnimationFrame(() => {
+        overlay.classList.add('active');
+    });
 }
 
 function closeMenu() {
     menuToggle.classList.remove('toggle');
     navMenu.classList.remove('nav-active');
+    if (overlay) {
+        overlay.classList.remove('active');
+    }
+
+    setTimeout(() => {
+        if (overlay) {
+            overlay.remove();
+            overlay = null; 
+        }
+    }, 150);
 }
 
 menuToggle.addEventListener('click', () => {
