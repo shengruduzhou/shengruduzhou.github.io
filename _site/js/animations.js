@@ -110,64 +110,18 @@ function createCloseButton() {
 function openMenu() {
     menuToggle.classList.add('toggle');
     navMenu.classList.add('nav-active');
-    
-    // 创建并显示遮罩
-    if (!overlay) {
-        overlay = createOverlay();
-    }
-    overlay.classList.add('active');
-    
-    // 创建关闭按钮
-    if (!closeBtn) {
-        closeBtn = createCloseButton();
-    }
 
-    // 添加事件监听
     overlay.addEventListener('click', closeMenu);
     closeBtn.addEventListener('click', closeMenu);
-
-    // 动画效果
-    anime({
-        targets: navMenu,
-        translateX: '0%',
-        duration: 100,
-        easing: 'easeInOutQuad'
-    });
 }
 
 function closeMenu() {
     menuToggle.classList.remove('toggle');
-    
-    // 动画效果
-        anime({
-            targets: navMenu,
-            translateX: '100%',
-        duration: 100,
-            easing: 'easeInOutQuad',
-            complete: () => {
-                navMenu.classList.remove('nav-active');
-            
-            // 隐藏遮罩
-            if (overlay) {
-                overlay.classList.remove('active');
-                setTimeout(() => {
-                    if (overlay && overlay.parentNode) {
-                        overlay.parentNode.removeChild(overlay);
-                    }
-                    overlay = null;
-                }, 100);
-            }
-            
-            // 移除关闭按钮
-            if (closeBtn && closeBtn.parentNode) {
-                closeBtn.parentNode.removeChild(closeBtn);
-                closeBtn = null;
-            }
-            }
-        });
+    navMenu.classList.remove('nav-active');
 }
 
 menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('toggle'); 
     if (!navMenu.classList.contains('nav-active')) {
         openMenu();
     } else {
