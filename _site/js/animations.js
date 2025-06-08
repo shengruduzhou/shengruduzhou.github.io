@@ -1,5 +1,78 @@
 // 页面加载动画
 document.addEventListener('DOMContentLoaded', () => {
+    tsParticles.load('tsparticles', {
+        background: {
+            color: {
+                value: '#121212'
+            }
+        },
+        fpsLimit: 120, // 限制最大帧率，有助于性能
+        interactivity: {
+            events: {
+                onHover: {
+                    enable: true,
+                    mode: 'repulse' // 鼠标悬停时排斥粒子
+                },
+                onClick: {
+                    enable: true,
+                    mode: 'push' // 鼠标点击时增加粒子
+                },
+                resize: true
+            },
+            modes: {
+                push: {
+                    quantity: 4
+                },
+                repulse: {
+                    distance: 150,
+                    duration: 0.4
+                }
+            }
+        },
+        particles: {
+            color: {
+                value: '#ffffff' // 粒子颜色
+            },
+            links: {
+                color: '#ffffff', // 连接线颜色
+                distance: 150,
+                enable: true,
+                opacity: 0.5,
+                width: 1
+            },
+            collisions: {
+                enable: true,
+            },
+            move: {
+                direction: 'none',
+                enable: true,
+                outModes: {
+                    default: 'bounce' // 粒子移出边界时反弹
+                },
+                random: false,
+                speed: 2, // 移动速度
+                straight: false
+            },
+            number: {
+                density: {
+                    enable: true,
+                    area: 800 // 粒子密度
+                },
+                value: 80 // 粒子数量
+            },
+            opacity: {
+                value: 0.5 // 粒子不透明度
+            },
+            shape: {
+                type: 'circle' // 粒子形状
+            },
+            size: {
+                value: { min: 1, max: 5 }, // 粒子大小范围
+            }
+        },
+        detectRetina: true,
+    });
+
     // 侧边栏动画
     anime({
         targets: '.sidebar-inner',

@@ -3,9 +3,18 @@ body {
     margin: 20px;
     padding: 0;
     line-height: 1.7;
-    background-color: #121212;
+    background-color: transparent; 
     position: relative;
     overflow-x: auto;
+}
+
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 /* 页面整体左右留白，始终并列 */
