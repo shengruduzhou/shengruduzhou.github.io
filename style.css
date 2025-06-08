@@ -46,7 +46,7 @@ body {
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 10px;
     z-index: 20;
 }
 .main-nav a { color: white; text-decoration: none; font-weight: bold; }
@@ -62,7 +62,7 @@ body {
 .main-grid {
     display: grid;
     grid-template-columns: 280px 1fr; /* 核心：左栏280px，右栏自动填充 */
-    gap: 40px;
+    gap: 10px;
     align-items: flex-start; /* 让两栏高度自适应，防止 sticky 失效 */
 }
 
@@ -70,7 +70,7 @@ body {
 .grid-sidebar-container {
     position: -webkit-sticky;
     position: sticky;
-    top: 20px; /* 置顶时距离顶部距离 */
+    top: 10px; /* 置顶时距离顶部距离 */
 }
 /* .sidebar 继承你原有的样式，我们只调整它的背景和阴影，因为父容器已有 */
 .sidebar {
@@ -97,7 +97,7 @@ body {
         position: static; /* 小屏上取消置顶 */
     }
     #main-content-wrapper {
-        margin-top: 0px;
+        margin-top: 10px;
     }
 }
 
