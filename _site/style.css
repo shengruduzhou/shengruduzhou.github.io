@@ -20,6 +20,7 @@ body {
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
+    top: 40px;
     font-family: 'Times New Roman', Times, serif;
     line-height: 1.7;
     background-color: #121212;
@@ -30,6 +31,7 @@ body {
 /* --- 1. 视差封面 & 顶部导航 --- */
 #hero-header {
     height: 100vh; /* 封面高度 */
+    border-radius: 20px;
     background-image: url('/picture/Vision.jpg');
     background-position: center center;
     background-size: cover;
@@ -37,7 +39,7 @@ body {
     position: relative;
 }
 .main-nav {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
