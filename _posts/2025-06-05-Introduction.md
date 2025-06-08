@@ -2,8 +2,8 @@
 layout: default
 title: "This is the Introduction of myself"
 date: 2025-06-05 16:39:23 +0900
-description: "Detail information about myself"
-categories: ["About myself"]
+description: "Detail information about me"
+categories: ["About Me"]
 tags: ["Information", "Myself", "experience"]
 ---
 
