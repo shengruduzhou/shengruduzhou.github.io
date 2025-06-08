@@ -29,7 +29,7 @@ body {
 
 /* --- 1. 视差封面 & 顶部导航 --- */
 #hero-header {
-    height: 60vh; /* 封面高度 */
+    height: 100vh; /* 封面高度 */
     background-image: url('/picture/Vision.jpg');
     background-position: center center;
     background-size: cover;
@@ -732,7 +732,7 @@ html {
     }
 
     #hero-header {
-        height: 50vh;
+        height: 100vh;
     }
 
     .sidebar, .grid-content-container .content {
