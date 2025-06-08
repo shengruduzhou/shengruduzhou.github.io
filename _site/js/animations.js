@@ -292,7 +292,6 @@ function initializeCustomCounter() {
     // --- 页面浏览量 (PV) ---
     let pvCount = localStorage.getItem('my_site_pv');
     
-    // 如果是第一次，从 0 开始
     pvCount = pvCount ? parseInt(pvCount) : 0;
     pvCount++;
     
@@ -304,7 +303,6 @@ function initializeCustomCounter() {
     uvCount = uvCount ? parseInt(uvCount) : 0;
 
     if (!localStorage.getItem('my_site_user_flag')) {
-        // 如果是新访客，UV+1
         uvCount++;
         localStorage.setItem('my_site_uv', uvCount);
         // 并设置一个永久标记，表示这个浏览器已经访问过

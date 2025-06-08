@@ -65,16 +65,16 @@ body {
     display: grid;
     grid-template-columns: 280px 1fr; /* 核心：左栏280px，右栏自动填充 */
     gap: 10px;
-    align-items: flex-start; /* 让两栏高度自适应，防止 sticky 失效 */
+    align-items: flex-start;
 }
 
 /* --- 3. 左右分栏的最终样式 --- */
 .grid-sidebar-container {
     position: -webkit-sticky;
     position: sticky;
-    top: 10px; /* 置顶时距离顶部距离 */
+    top: 80px;
 }
-/* .sidebar 继承你原有的样式，我们只调整它的背景和阴影，因为父容器已有 */
+
 .sidebar {
     width: 100%;
     background-color: rgba(30, 30, 30, 0.85);
@@ -120,7 +120,7 @@ body {
     font-size: 2.2em;
     margin-bottom: 15px;
     color: #4169e1;
-    letter-spacing: 0.5px; /* 轻微的字间距 */
+    letter-spacing: 0.5px;
     position: relative;
     text-align: center;
     width: 100%;
@@ -144,8 +144,8 @@ body {
 
 .sidebar h2 { 
     font-size: 1.4em;
-    color: #FFD770;/* 金色 */
-    font-style: italic; /* 倾斜 */
+    color: #FFD770;
+    font-style: italic;
     margin-top: 15px;
     margin-bottom: 25px;
     letter-spacing: 0.6px;
@@ -309,7 +309,7 @@ body {
 
 /* --- 4. 页脚 --- */
 #page-footer {
-    padding: 30px 5%; /* 使用百分比边距，更好地适应不同屏幕 */
+    padding: 30px 5%; /* 百分比边距，适应不同屏幕 */
     background-color: rgba(18, 18, 18, 0.5);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -715,7 +715,7 @@ html {
     letter-spacing: 1px;
 }
 
-/* --- 最终响应式设计 (Consolidated Responsive Design) --- */
+/* --- RWD响应式设计 (responsive web design) --- */
 @media (max-width: 900px) {
 
     /* --- 1. 核心布局切换：双栏变单栏 --- */
@@ -743,7 +743,7 @@ html {
 
     /* --- 3. 字体大小优化，提升移动端阅读体验 --- */
     body {
-        font-size: 15px; /* 适当减小网站基础字体大小 */
+        font-size: 15px;
         line-height: 1.6;
     }
 
@@ -774,7 +774,7 @@ html {
 
     /* --- 5. 移动端全屏菜单样式 (新增) --- */
     .nav-menu {
-        width: 100%; /* 宽度占满整个屏幕 */
+        width: 100%;
         transform: translateX(100%);
         transition: transform 0.4s ease-in-out;
         padding-top: 0;
@@ -784,7 +784,6 @@ html {
         transform: translateX(0%);
     }
 
-    /* 让菜单项在屏幕中垂直和水平居中 */
     .nav-menu ul {
         height: 100%;
         display: flex;
@@ -793,15 +792,13 @@ html {
         align-items: center;
     }
 
-    /* 适当增大菜单项的字体和间距，方便手机触摸 */
     .nav-menu li {
         padding: 20px 0;
     }
     .nav-menu a {
-        font-size: 1.8em; /* 增大字体 */
+        font-size: 1.8em;
     }
 
-    /* 确保汉堡按钮在全屏菜单之上 */
     .menu-toggle {
         z-index: 1002;
     }
