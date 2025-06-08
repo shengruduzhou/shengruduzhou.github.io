@@ -280,50 +280,45 @@ function show_runtime() {
     }, 1000);
 }
 
-// CountAPI 访客统计脚本
-function fetchVisitorStats() {
-    const namespace = "shengruduzhou.github.io"; // ID
+// CountAPI 访客统计
+function initializeCustomCounter() {
     const pvElement = document.getElementById("page-views");
     const uvElement = document.getElementById("unique-visitors");
 
     if (!pvElement || !uvElement) {
-        console.log("Visitor count elements not found on this page.");
         return;
     }
+    
+    // --- 页面浏览量 (PV) ---
+    let pvCount = localStorage.getItem('my_site_pv');
+    
+    // 如果是第一次，从 0 开始
+    pvCount = pvCount ? parseInt(pvCount) : 0;
+    pvCount++;
+    
+    localStorage.setItem('my_site_pv', pvCount);
+    pvElement.innerHTML = pvCount;
 
-    // 获取总浏览量 (PV)
-    fetch(`https://api.countapi.xyz/hit/${namespace}/pageviews`)
-        .then(res => res.json())
-        .then(data => {
-            pvElement.innerHTML = data.value;
-        })
-        .catch(error => {
-            console.error('Error fetching PV:', error);
-            pvElement.innerHTML = 'N/A';
-        });
+    // --- 独立访客 (UV) ---
+    let uvCount = localStorage.getItem('my_site_uv');
+    uvCount = uvCount ? parseInt(uvCount) : 0;
 
-    // 获取独立访客 (UV)
-    const uvKey = 'user-has-visited';
-    const userHasVisited = localStorage.getItem(uvKey);
-    const apiEndpoint = userHasVisited 
-        ? `https://api.countapi.xyz/get/${namespace}/uniquevisitors`
-        : `https://api.countapi.xyz/hit/${namespace}/uniquevisitors`;
-
-    fetch(apiEndpoint)
-        .then(res => res.json())
-        .then(data => {
-            uvElement.innerHTML = data.value;
-            if (!userHasVisited) {
-                localStorage.setItem(uvKey, 'true');
-            }
-        })
-        .catch(error => {
-            console.error('Error fetching UV:', error);
-            uvElement.innerHTML = 'N/A';
-        });
+    if (!localStorage.getItem('my_site_user_flag')) {
+        // 如果是新访客，UV+1
+        uvCount++;
+        localStorage.setItem('my_site_uv', uvCount);
+        // 并设置一个永久标记，表示这个浏览器已经访问过
+        localStorage.setItem('my_site_user_flag', 'true');
+    }
+    
+    uvElement.innerHTML = uvCount;
 }
 
+
 document.addEventListener('DOMContentLoaded', () => {
-    show_runtime();
-    fetchVisitorStats();
+    // 运行时间统计
+    show_runtime(); 
+    
+    //统计计数器
+    initializeCustomCounter();
 });
