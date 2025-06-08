@@ -32,7 +32,7 @@ body {
 #hero-header {
     height: 100vh; /* 封面高度 */
     border-radius: 20px;
-    background-image: url('/picture/Vision.jpg');
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url('/picture/Vision.jpg');
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
