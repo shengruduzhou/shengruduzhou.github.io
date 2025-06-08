@@ -270,12 +270,13 @@ function show_runtime() {
         const now = new Date();
         const diff = now.getTime() - siteCreationDate.getTime();
 
+        const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
         const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-        runtimeSpan.innerHTML = `RUN TIME: ${days}Day${hours}Hour${minutes}Moment${seconds}Second`;
+        runtimeSpan.innerHTML = `RUN TIME: ${years}Y${days}Days${hours}Hrs${minutes}Min${seconds}Sec`;
     }, 1000);
 }
 
