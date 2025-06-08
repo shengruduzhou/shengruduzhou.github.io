@@ -149,19 +149,32 @@ window.addEventListener('scroll', () => {
 });
 
 // 鼠标跟随效果
+let lastTrailTime = 0;
+const trailInterval = 20;
+
 document.addEventListener('mousemove', (e) => {
-    const cursor = document.createElement('div');
-    cursor.className = 'cursor-trail';
-    cursor.style.left = e.pageX + 'px';
-    cursor.style.top = e.pageY + 'px';
-    document.body.appendChild(cursor);
+    const now = Date.now();
+    if (now - lastTrailTime < trailInterval) {
+        return; 
+    }
+    lastTrailTime = now;
+
+    const trailDot = document.createElement('div');
+    trailDot.className = 'cursor-trail';
+    trailDot.style.left = e.pageX + 'px';
+    trailDot.style.top = e.pageY + 'px';
+    document.body.appendChild(trailDot);
 
     anime({
-        targets: cursor,
+        targets: trailDot,
+        translateX: '-50%', 
+        translateY: '-50%',
+        scale: [1, 2.5],
         opacity: [1, 0],
-        scale: [1, 0],
-        duration: 1000,
+        duration: 600,
         easing: 'easeOutExpo',
-        complete: () => cursor.remove()
+        complete: () => {
+            trailDot.remove();
+        }
     });
-}); 
+});
