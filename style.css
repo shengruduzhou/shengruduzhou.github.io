@@ -715,7 +715,7 @@ html {
     letter-spacing: 1px;
 }
 
-/* --- 最终响应式设计 (responsive web design) --- */
+/* --- RWD响应式设计 (responsive web design) --- */
 @media (max-width: 900px) {
 
     /* --- 1. 核心布局切换：双栏变单栏 --- */
