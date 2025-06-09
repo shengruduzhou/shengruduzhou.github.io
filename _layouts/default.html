@@ -49,11 +49,11 @@
             <div class="visitor-stats">
                 <span class="stat-item">
                     <span class="stat-label">Unique Visitor</span>
-                    <span id="busuanzi_value_site_uv" class="stat-value"><i class="loading-icon"></i></span>
+                    <span id="busuanzi_site_uv" class="stat-value"><i class="loading-icon"></i></span>
                 </span>
                 <span class="stat-item">
                     <span class="stat-label">Page View</span>
-                    <span id="busuanzi_value_site_pv" class="stat-value"><i class="loading-icon"></i></span>
+                    <span id="busuanzi_site_pv" class="stat-value"><i class="loading-icon"></i></span>
                 </span>
                 </div>
             </div>
@@ -70,20 +70,7 @@
 </body>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3.0/busuanzi.pure.mini.js"></script>
-    <script>
-    if (!localStorage.getItem('busuanzi_offset_applied')) {
-        fetch('//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback')
-            .then(response => response.text())
-            .then(text => {
-                const jsonString = text.substring(text.indexOf('(') + 1, text.lastIndexOf(')'));
-                const data = JSON.parse(jsonString);
-                busuanzi.set_offset([-parseInt(data.site_pv, 10), -parseInt(data.site_uv, 10)]);
-                localStorage.setItem('busuanzi_offset_applied', 'true');
-                busuanzi.fetch();
-            });
-    }
-    </script>
+    <script defer src="https://busuanzi.9420.ltd/js"></script>
     <script src="{{ '/js/script.js' | relative_url }}"></script>
     <script src="{{ '/js/animations.js' | relative_url }}"></script>
 </html>
