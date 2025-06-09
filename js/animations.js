@@ -281,35 +281,64 @@ function show_runtime() {
 }
 
 // CountAPI 访客统计
-function initializeCustomCounter() {
+async function initializeGlobalCounter() {
     const pvElement = document.getElementById("page-views");
     const uvElement = document.getElementById("unique-visitors");
 
     if (!pvElement || !uvElement) {
+        console.error("Counter elements not found.");
         return;
     }
-    
-    // --- 页面浏览量 (PV) ---
-    let pvCount = localStorage.getItem('my_site_pv');
-    
-    pvCount = pvCount ? parseInt(pvCount) : 0;
-    pvCount++;
-    
-    localStorage.setItem('my_site_pv', pvCount);
-    pvElement.innerHTML = pvCount;
 
-    // --- 独立访客 (UV) ---
-    let uvCount = localStorage.getItem('my_site_uv');
-    uvCount = uvCount ? parseInt(uvCount) : 0;
+    // --- 配置你的计数器 ---
+    const namespace = 'https://shengruduzhou.github.io/'; 
+    const pvKey = 'pageviews';
+    const uvKey = 'uniquevisitors';
 
-    if (!localStorage.getItem('my_site_user_flag')) {
-        uvCount++;
-        localStorage.setItem('my_site_uv', uvCount);
-        // 并设置一个永久标记，表示这个浏览器已经访问过
-        localStorage.setItem('my_site_user_flag', 'true');
+    try {
+        const [pvResponse, uvData] = await Promise.all([
+            fetch(`https://api.countapi.xyz/hit/${namespace}/${pvKey}`),
+            
+            fetch(`https://api.countapi.xyz/get/${namespace}/${uvKey}`)
+        ]);
+
+        // --- PV ---
+        if (pvResponse.ok) {
+            const pvCount = await pvResponse.json();
+            pvElement.innerHTML = pvCount.value;
+        } else {
+            console.error("Failed to fetch PV count.");
+            pvElement.innerHTML = 'N/A';
+        }
+        
+        // --- UV ---
+        if (uvData.ok) {
+            let uvCount = (await uvData.json()).value;
+
+            //本地是否有访问标记
+            if (!localStorage.getItem('my_site_user_flag')) {
+                // 如果是新访客，'hit' UV 计数器来增加计数
+                const uvHitResponse = await fetch(`https://api.countapi.xyz/hit/${namespace}/${uvKey}`);
+                if (uvHitResponse.ok) {
+                    const newUvCount = await uvHitResponse.json();
+                    uvCount = newUvCount.value;
+                }
+                
+                // 在本地设置永久标记，确保此浏览器不再重复计数
+                localStorage.setItem('my_site_user_flag', 'true');
+            }
+            
+            uvElement.innerHTML = uvCount;
+        } else {
+            console.error("Failed to fetch UV count.");
+            uvElement.innerHTML = 'N/A';
+        }
+
+    } catch (error) {
+        console.error("Error initializing counter:", error);
+        pvElement.innerHTML = 'Error';
+        uvElement.innerHTML = 'Error';
     }
-    
-    uvElement.innerHTML = uvCount;
 }
 
 
