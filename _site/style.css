@@ -159,6 +159,18 @@ body {
     text-align:left;
 }
 
+.sidebar a {
+    color: #FFD770;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.sidebar a:hover {
+    color: #fffb00;
+    text-decoration: underline;
+}
+
 .social-links {
     display: flex;
     justify-content: center;
@@ -218,6 +230,19 @@ body {
 .content:hover {
     border-color: rgba(255, 215, 112, 0.3);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+
+.content a {
+    color: #FFD770;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.content a:hover {
+    color: #fffb00;
+    text-decoration: underline;
 }
 
 .content h2 {
@@ -493,20 +518,6 @@ body {
     transform: translateY(-9.5px) rotate(-45deg);
 }
 
-/* 鼠标跟随效果样式 */
-.cursor-trail {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background: rgba(255, 215, 112, 0.5);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    transform: translate(-50%, -50%);
-}
-
 /* 导航菜单动画样式 */
 .post-item {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -713,6 +724,18 @@ html {
     font-weight: bold;
     margin-left: 8px;
     letter-spacing: 1px;
+}
+
+.form-description a {
+    color: #FFD770;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.form-description a:hover {
+    color: #fffb00;
+    text-decoration: underline;
 }
 
 /* --- RWD响应式设计 (responsive web design) --- */

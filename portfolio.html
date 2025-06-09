@@ -1,0 +1,112 @@
+---
+layout: default
+title: Portfolio & Skills
+---
+<style>
+    .skills-section {
+        max-width: 900px;
+        margin: 2rem auto;
+        text-align: center;
+    }
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 2rem 1.5rem;
+        margin-top: 2rem;
+    }
+    .skill-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .skill-circle {
+        width: 120px;
+        height: 120px;
+        transform: rotate(-90deg); /* 将起点转到12点钟方向 */
+    }
+    .skill-circle .track,
+    .skill-circle .progress {
+        fill: none;
+        stroke-width: 10;
+    }
+    .skill-circle .track {
+        stroke: #e6e6e6;
+    }
+    .skill-circle .progress {
+        stroke: #007bff; /* 进度条颜色，可以为每个技能设置不同颜色 */
+        stroke-dasharray: 283; /* 2 * PI * 45 ≈ 282.7，取整 */
+        stroke-dashoffset: 283; /* 初始状态，完全隐藏 */
+        stroke-linecap: round;
+        transition: stroke-dashoffset 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .skill-item.in-view .progress {
+        stroke-dashoffset: calc(283 * (1 - var(--progress, 0) / 100));
+    }
+    .skill-name {
+        margin-top: 1rem;
+        font-weight: 600;
+        font-size: 1rem;
+    }
+</style>
+
+<div class="skills-section">
+    <h2>My Skills</h2>
+    <p>Here's a showcase of my technical abilities.</p>
+    <div class="skills-grid">
+        <div class="skill-item">
+            <svg class="skill-circle" viewBox="0 0 100 100">
+                <circle class="track" cx="50" cy="50" r="45"></circle>
+                <circle class="progress" cx="50" cy="50" r="45" style="--progress: 90; stroke: #f7df1e;"></circle>
+            </svg>
+            <div class="skill-name">JavaScript</div>
+        </div>
+
+        <div class="skill-item">
+            <svg class="skill-circle" viewBox="0 0 100 100">
+                <circle class="track" cx="50" cy="50" r="45"></circle>
+                <circle class="progress" cx="50" cy="50" r="45" style="--progress: 85; stroke: #3776ab;"></circle>
+            </svg>
+            <div class="skill-name">Python</div>
+        </div>
+
+        <div class="skill-item">
+            <svg class="skill-circle" viewBox="0 0 100 100">
+                <circle class="track" cx="50" cy="50" r="45"></circle>
+                <circle class="progress" cx="50" cy="50" r="45" style="--progress: 95; stroke: #ff7b2e;"></circle>
+            </svg>
+            <div class="skill-name">UI/UX Design</div>
+        </div>
+
+        <div class="skill-item">
+            <svg class="skill-circle" viewBox="0 0 100 100">
+                <circle class="track" cx="50" cy="50" r="45"></circle>
+                <circle class="progress" cx="50" cy="50" r="45" style="--progress: 98; stroke: #e34f26;"></circle>
+            </svg>
+            <div class="skill-name">HTML & CSS</div>
+        </div>
+        
+        </div>
+</div>
+
+<script>
+    // 使用 Intersection Observer API 实现动画的按需加载，性能最佳
+    document.addEventListener('DOMContentLoaded', () => {
+        const skillItems = document.querySelectorAll('.skill-item');
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    // 动画只播放一次，播放后停止观察
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.5 // 当元素50%可见时触发
+        });
+
+        skillItems.forEach(item => {
+            observer.observe(item);
+        });
+    });
+</script>
