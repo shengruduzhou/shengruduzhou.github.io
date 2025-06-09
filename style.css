@@ -870,9 +870,7 @@ html {
 
     /* --- 3. Hero区域优化，避免占据过多首屏空间 --- */
     #hero-header {
-        height: 60vh;
-        min-height: 300px;
-        padding: 60px 20px;
+        height: auto;
     }
 
     /* --- 4. 移动菜单微调，适应更小的屏幕 --- */
