@@ -225,38 +225,6 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     });
 });
 
-
-// 鼠标跟随效果
-let lastTrailTime = 0;
-const trailInterval = 20;
-
-document.addEventListener('mousemove', (e) => {
-    const now = Date.now();
-    if (now - lastTrailTime < trailInterval) {
-        return; 
-    }
-    lastTrailTime = now;
-
-    const trailDot = document.createElement('div');
-    trailDot.className = 'cursor-trail';
-    trailDot.style.left = e.pageX + 'px';
-    trailDot.style.top = e.pageY + 'px';
-    document.body.appendChild(trailDot);
-
-    anime({
-        targets: trailDot,
-        translateX: '-50%', 
-        translateY: '-50%',
-        scale: [1, 2.5],
-        opacity: [1, 0],
-        duration: 600,
-        easing: 'easeOutExpo',
-        complete: () => {
-            trailDot.remove();
-        }
-    });
-});
-
 // 运行时间统计
 function show_runtime() {
     const runtimeSpan = document.getElementById("runtime_span");
@@ -280,43 +248,6 @@ function show_runtime() {
     }, 1000);
 }
 
-// CountAPI 访客统计
-function initializeCustomCounter() {
-    const pvElement = document.getElementById("page-views");
-    const uvElement = document.getElementById("unique-visitors");
-
-    if (!pvElement || !uvElement) {
-        return;
-    }
-    
-    // --- 页面浏览量 (PV) ---
-    let pvCount = localStorage.getItem('my_site_pv');
-    
-    pvCount = pvCount ? parseInt(pvCount) : 0;
-    pvCount++;
-    
-    localStorage.setItem('my_site_pv', pvCount);
-    pvElement.innerHTML = pvCount;
-
-    // --- 独立访客 (UV) ---
-    let uvCount = localStorage.getItem('my_site_uv');
-    uvCount = uvCount ? parseInt(uvCount) : 0;
-
-    if (!localStorage.getItem('my_site_user_flag')) {
-        uvCount++;
-        localStorage.setItem('my_site_uv', uvCount);
-        // 并设置一个永久标记，表示这个浏览器已经访问过
-        localStorage.setItem('my_site_user_flag', 'true');
-    }
-    
-    uvElement.innerHTML = uvCount;
-}
-
-
 document.addEventListener('DOMContentLoaded', () => {
-    // 运行时间统计
     show_runtime(); 
-    
-    //统计计数器
-    initializeCustomCounter();
 });

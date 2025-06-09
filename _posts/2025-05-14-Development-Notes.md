@@ -7,6 +7,20 @@ categories: ["Note"]
 tags: ["System", "Note"]
 ---
 
+<style>
+    .content a {
+        color: #FFD770;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+    .content a:hover {
+        color: #fffb00;
+        text-decoration: underline;
+    }
+</style>
+
 <h3>{{ page.title }}</h3>
 <h4>{{ page.date | date: "%b %d, %Y" }}</h4>
 <p>Create MyPage on GitHub, implemented funcionalities using HTML, CSS and JavaScript.For detailed recordes.

@@ -232,19 +232,6 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
-
-.content a {
-    color: #FFD770;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.content a:hover {
-    color: #fffb00;
-    text-decoration: underline;
-}
-
 .content h2 {
     font-size: 2.6em;
     color: #2E8B57;
@@ -394,8 +381,6 @@ body {
     min-width: 60px;
     display: inline-block;
 }
-
-
 
 .loading-icon {
     display: inline-block;
@@ -835,5 +820,65 @@ html {
     .content pre, .content code {
         white-space: pre-wrap;
         word-wrap: break-word;
+    }
+}
+
+/* --- RWD响应式设计 (Mobile) --- */
+@media (max-width: 600px) {
+
+    /* --- 1. 布局与间距微调，最大化屏幕空间 --- */
+    #main-content-wrapper {
+        padding: 10px 5px;
+    }
+
+    .main-grid {
+        gap: 15px;
+    }
+
+    .sidebar, .grid-content-container .content {
+        padding: 20px 15px;
+        border-radius: 8px;
+    }
+
+    /* --- 2. 字体大小精细化，优化移动端阅读层级 --- */
+    body {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .content h2 { font-size: 1.8em; }
+    .content h3 { font-size: 1.4em; }
+    .post-title a { font-size: 1.25em; }
+    
+    .sidebar h1 { font-size: 1.6em; }
+    .sidebar h2 { font-size: 1.1em; }
+
+    /* --- 3. Hero区域优化，避免占据过多首屏空间 --- */
+    #hero-header {
+        height: 80vh;
+    }
+
+    /* --- 4. 移动菜单微调，适应更小的屏幕 --- */
+    .nav-menu a {
+        font-size: 1.5em;
+    }
+
+    .nav-menu li {
+        padding: 18px 0;
+    }
+
+    /* --- 5. 页脚布局简化 --- */
+    .footer-grid {
+        gap: 20px;
+    }
+    
+    .footer-left, .footer-center, .footer-right {
+        padding: 0 10px;
+    }
+
+    /* --- 6. 代码块样式优化，提升代码阅读体验 --- */
+    .content pre {
+        padding: 0.8em;
+        border-radius: 6px;
     }
 }
