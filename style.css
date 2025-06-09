@@ -870,7 +870,7 @@ html {
 
     /* --- 3. Hero区域优化，避免占据过多首屏空间 --- */
     #hero-header {
-        height: auto;
+        height: 60vh;
         min-height: 300px;
         padding: 60px 20px;
     }
