@@ -225,38 +225,6 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     });
 });
 
-
-// 鼠标跟随效果
-let lastTrailTime = 0;
-const trailInterval = 20;
-
-document.addEventListener('mousemove', (e) => {
-    const now = Date.now();
-    if (now - lastTrailTime < trailInterval) {
-        return; 
-    }
-    lastTrailTime = now;
-
-    const trailDot = document.createElement('div');
-    trailDot.className = 'cursor-trail';
-    trailDot.style.left = e.pageX + 'px';
-    trailDot.style.top = e.pageY + 'px';
-    document.body.appendChild(trailDot);
-
-    anime({
-        targets: trailDot,
-        translateX: '-50%', 
-        translateY: '-50%',
-        scale: [1, 2.5],
-        opacity: [1, 0],
-        duration: 600,
-        easing: 'easeOutExpo',
-        complete: () => {
-            trailDot.remove();
-        }
-    });
-});
-
 // 运行时间统计
 function show_runtime() {
     const runtimeSpan = document.getElementById("runtime_span");
