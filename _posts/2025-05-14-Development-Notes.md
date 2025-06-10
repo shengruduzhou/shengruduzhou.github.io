@@ -11,7 +11,6 @@ tags: ["System", "Note"]
     .content a {
         color: #FFD770;
         text-decoration: none;
-        font-weight: 500;
         transition: color 0.3s;
     }
 
