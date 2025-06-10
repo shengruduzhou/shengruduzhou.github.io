@@ -812,12 +812,12 @@ html {
     }
 
     /* --- 6. 修复内容溢出问题 --- */
-    .content img, .sidebar img, .content p a {
+    .content img, .sidebar img {
         max-width: 100%;
         height: auto;
     }
 
-    .content pre, .content code, .content p a {
+    .content pre, .content code {
         white-space: pre-wrap;
         word-wrap: break-word;
     }
@@ -884,12 +884,12 @@ html {
     }
 
     /* --- 7. 修复内容溢出问题 --- */
-    .content img, .sidebar img，.content p a {
+    .content img, .sidebar img {
         max-width: 100%;
         height: auto;
     }
 
-    .content pre, .content code, .content p a {
+    .content pre, .content code {
         white-space: pre-wrap;
         word-wrap: break-word;
     }
