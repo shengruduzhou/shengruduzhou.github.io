@@ -30,7 +30,7 @@ body {
 
 /* --- 1. 视差封面 & 顶部导航 --- */
 #hero-header {
-    height: 100vh; /* 封面高度 */
+    height: 100%; /* 封面高度 */
     border-radius: 20px;
     background-image:  linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url('/picture/Vision.jpg');
     background-position: center center;
@@ -742,7 +742,7 @@ html {
     }
 
     #hero-header {
-        height: 100vh;
+        height: 100%;
     }
 
     .sidebar, .grid-content-container .content {
@@ -855,7 +855,7 @@ html {
 
     /* --- 3. Hero区域优化，避免占据过多首屏空间 --- */
     #hero-header {
-        height: 80vh;
+        height: 100%;
     }
 
     /* --- 4. 移动菜单微调，适应更小的屏幕 --- */
