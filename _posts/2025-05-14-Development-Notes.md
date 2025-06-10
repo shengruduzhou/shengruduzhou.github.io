@@ -25,6 +25,6 @@ tags: ["System", "Note"]
 <p>Create MyPage on GitHub, implemented funcionalities using HTML, CSS and JavaScript.For detailed recordes.
     <span style="color:red;">Please refer to the GitHub journal.</span>
     <a href="https://github.com/shengruduzhou/shengruduzhou.github.io/deployments" target="_blank">
-    https://github.com/shengruduzhou/shengruduzhou.github.io/deployments
+    Development Note
     </a>
 </p>
