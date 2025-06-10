@@ -883,4 +883,15 @@ html {
         padding: 0.8em;
         border-radius: 6px;
     }
+
+    /* --- 7. 修复内容溢出问题 --- */
+    .content img, .sidebar img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .content pre, .content code {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
 }
