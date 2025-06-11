@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>渡 Ferry Personal Website</title>
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="theme-checkbox">
+            <input type="checkbox" id="theme-checkbox" />
+            <div class="slider round">
+                <div class="sun"></div>
+                <div class="moon"></div>
+            </div>
+        </label>
+    </div>
+
+    <div id="tsparticles"></div>
+
+    <header id="hero-header">
+        <nav class="main-nav">
+            <a href="/">HOME</a>
+            <a href="/portfolio.html">Portfolio</a>
+            <a href="/connect-to-me.html">Contact</a>
+            <a href="/about%20me/2025/06/05/Introduction.html">About Me</a>
+            <a href="https://github.com/shengruduzhou" target="_blank">Github</a>
+        </nav>
+    </header>
+
+    <div id="main-content-wrapper">
+        <div class="main-grid">
+            <aside class="grid-sidebar-container">
+                <div class="sidebar">
+    <div class="sidebar-inner"> 
+        <img src="/picture/icon.jpg" alt="Your Avatar" class="avatar" id="home-link">
+        <h1>渡 Ferry</h1>
+        <h2>暗闇で生きている良かった</h2>
+        <p>
+            I am currently a Master's student (Master of Engineering) at Sophia University in Tokyo, Japan.
+            <a href="https://github.com/islab-sophia">@islab.sophia</a>
+        </p>
+        <div class="social-links">
+            <a href="https://github.com/shengruduzhou" target="_blank">
+                <img src="/picture/GitHub.png" class="social-icon">GitHub
+            </a>
+            <a href="https://twitter.com/dudu2027377" target="_blank">
+                <img src="/picture/Twitter.png" class="social-icon">Twitter
+            </a>
+            <a href="mailto:shanhefu@gmail.com">
+                <img src="/picture/Email.png" class="social-icon">Email
+            </a>
+        </div>
+    </div>
+</div>
+            </aside>
+
+            <main class="grid-content-container">
+                <div class="content">
+                    <div class="content-inner">
+                        <h2>Categories</h2>
+<div class="list-container">
+  
+    <div class="list-item category-item">
+      <a href="#note" class="category-link">Note</a>
+      <span>(1)</span>
+    </div>
+  
+    <div class="list-item category-item">
+      <a href="#about-me" class="category-link">About Me</a>
+      <span>(1)</span>
+    </div>
+  
+</div>
+
+<hr>
+
+
+  <div id="note">
+    <h3>Note</h3>
+    <div class="category-posts">
+      
+        <div class="category-post-item">
+          <a href="/note/2025/05/14/Development-Notes.html">This is the Development Notes about MyPage</a>
+          <span class="post-date">May 14, 2025</span>
+        </div>
+      
+    </div>
+  </div>
+
+  <div id="about-me">
+    <h3>About Me</h3>
+    <div class="category-posts">
+      
+        <div class="category-post-item">
+          <a href="/about%20me/2025/06/05/Introduction.html">This is the Introduction of myself</a>
+          <span class="post-date">Jun 05, 2025</span>
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <footer id="page-footer">
+        <div class="footer-grid">
+            <div class="footer-left">
+                <p>Powered by <strong>Jekyll</strong></p>
+                <p>Theme by <strong>渡 Ferry</strong></p>
+            </div>
+            <div class="footer-center">
+                <p>&copy; 2025 渡 Ferry. All Rights Reserved.</p>
+                <p id="runtime_span"></p> </div>
+            <div class="footer-right">
+            <div class="visitor-stats">
+                <span class="stat-item">
+                    <span class="stat-label">Unique Visitor</span>
+                    <span id="busuanzi_site_uv" class="stat-value"><i class="loading-icon"></i></span>
+                </span>
+                <span class="stat-item">
+                    <span class="stat-label">Page View</span>
+                    <span id="busuanzi_site_pv" class="stat-value"><i class="loading-icon"></i></span>
+                </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="theme-modal" id="theme-modal">
+        <h3>Caution: Light mode ahead!</h3>
+        <p>XD <span style="color:red;">!!!Please don't try this at home!!!</span> lol</p>
+        <div>
+            <button class="modal-button go-light-btn" id="go-light-btn">Go Light</button>
+            <button class="modal-button cancel-btn" id="cancel-btn">Cancel</button>
+        </div>
+    </div>
+
+    <nav class="nav-menu">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/categories.html">Categories</a></li>
+        <li><a href="/tags.html">Tags</a></li>
+        <li><a href="/about%20me/2025/06/05/Introduction.html">About Me</a></li>
+        <li><a href="#" id="top-page-link">Top of Page</a></li>
+    </ul>
+</nav>
+    <div class="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+</body>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script defer src="https://busuanzi.9420.ltd/js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="/js/animations.js"></script>
+</html>

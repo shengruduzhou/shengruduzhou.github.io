@@ -806,6 +806,12 @@ html {
     margin-bottom: 2.5rem;
     line-height: 1.6;
 }
+.form-description-link {
+    color: var(--text-color-link);
+}
+.form-description-link:hover {
+    color: var(--text-color-link-hover);
+}
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -818,6 +824,8 @@ html {
 .form-group input,
 .form-group textarea {
     width: 100%;
+    max-width: 600px;
+    min-height: 50px;
     padding: 0.8rem 1rem;
     border-radius: 5px;
     font-size: 1rem;
