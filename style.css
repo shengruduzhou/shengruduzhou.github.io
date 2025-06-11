@@ -1,3 +1,78 @@
+/* --- CSS Variables for Theming --- */
+:root, [data-theme='dark'] {
+    --bg-color: #121212;
+    --bg-color-translucent: rgba(18, 18, 18, 0.3);
+    --content-bg-color: rgba(30, 30, 30, 0.85);
+    --content-bg-hover: rgba(30, 30, 30, 0.92);
+    --content-border-color: rgba(255, 215, 112, 0.15);
+    --content-border-hover: rgba(255, 215, 112, 0.3);
+    --text-color-primary: #ccc;
+    --text-color-secondary: #aaa;
+    --text-color-headers: #e0e0e0;
+    --text-color-link: #FFD770;
+    --text-color-link-hover: #fffb00;
+    --accent-color-primary: #FFD770;
+    --accent-color-secondary: #4169e1;
+    --accent-color-tertiary: #64b5f6;
+    --social-link-color: rgba(30, 30, 30, 0.5);
+    --social-link-hover: rgba(30, 30, 30, 0.8);
+    --header-h1-color: #4169e1;
+    --header-h2-color: #2E8B57;
+    --post-title-color: #d1c4e9;
+    --post-title-hover: #b39ddb;
+    --post-date-color: #00BFFF;
+    --category-tag-bg: rgba(46, 139, 87, 0.2);
+    --category-tag-text: #2E8B57;
+    --category-tag-border: rgba(46, 139, 87, 0.3);
+    --tag-tag-bg: rgba(65, 105, 225, 0.2);
+    --tag-tag-text: #4169e1;
+    --tag-tag-border: rgba(65, 105, 225, 0.3);
+    --hero-gradient: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    --particle-bg: '#121212';
+    --particle-color: '#FFD770';
+    --particle-link-color: '#4169e1';
+    --page-footer-border-color: rgba(255, 255, 255, 0.1);
+    --loading-icon-border-color: rgba(255, 255, 255, 0.3);
+    --loading-icon-border-top-color: #fff;
+}
+
+[data-theme='light'] {
+    --bg-color: #f0f2f5;
+    --bg-color-translucent: rgba(255, 255, 255, 0.3);
+    --content-bg-color: rgba(255, 255, 255, 0.85);
+    --content-bg-hover: rgba(255, 255, 255, 0.92);
+    --content-border-color: rgba(0, 0, 0, 0.1);
+    --content-border-hover: rgba(0, 123, 255, 0.3);
+    --text-color-primary: #333;
+    --text-color-secondary: #555;
+    --text-color-headers: #111;
+    --text-color-link: #0056b3;
+    --text-color-link-hover: #003d80;
+    --accent-color-primary: #007bff;
+    --accent-color-secondary: #17a2b8;
+    --accent-color-tertiary: #28a745;
+    --social-link-color: rgba(230, 230, 230, 0.5);
+    --social-link-hover: rgba(220, 220, 220, 0.8);
+    --header-h1-color: #17a2b8;
+    --header-h2-color: #28a745;
+    --post-title-color: #6f42c1;
+    --post-title-hover: #5a32a3;
+    --post-date-color: #007bff;
+    --category-tag-bg: rgba(40, 167, 69, 0.1);
+    --category-tag-text: #28a745;
+    --category-tag-border: rgba(40, 167, 69, 0.3);
+    --tag-tag-bg: rgba(0, 123, 255, 0.1);
+    --tag-tag-text: #007bff;
+    --tag-tag-border: rgba(0, 123, 255, 0.3);
+    --hero-gradient: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+    --particle-bg: '#f0f2f5';
+    --particle-color: '#007bff';
+    --particle-link-color: '#17a2b8';
+    --page-footer-border-color: rgba(0, 0, 0, 0.1);
+    --loading-icon-border-color: rgba(0, 0, 0, 0.2);
+    --loading-icon-border-top-color: #333;
+}
+
 body {
     font-family: 'Times New Roman', Times, serif;
     margin: 20px;
@@ -9,12 +84,12 @@ body {
 }
 
 #tsparticles {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,16 +98,15 @@ body {
     top: 40px;
     font-family: 'Times New Roman', Times, serif;
     line-height: 1.7;
-    background-color: #121212;
-    color: #ccc;
+    background-color: var(--bg-color);
+    color: var(--text-color-primary);
 }
-#tsparticles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
 
 /* --- 1. 视差封面 & 顶部导航 --- */
 #hero-header {
     height: 90vh; /* 封面高度 */
     border-radius: 20px;
-    background-image:  linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url('/picture/Vision.jpg');
+    background-image:  var(--hero-gradient),url('/picture/Vision.jpg');
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
@@ -44,14 +118,18 @@ body {
     left: 0;
     width: 100%;
     padding: 15px 5%;
-    background: rgba(18, 18, 18, 0.3);
+    background: var(--bg-color-translucent);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
     gap: 10px;
     z-index: 20;
 }
-.main-nav a { color: white; text-decoration: none; font-weight: bold; }
+.main-nav a {
+    color: var(--text-color-headers);
+    text-decoration: none;
+    font-weight: bold;
+}
 
 /* --- 2. 主内容区 --- */
 #main-content-wrapper {
@@ -77,14 +155,14 @@ body {
 
 .sidebar {
     width: 100%;
-    background-color: rgba(30, 30, 30, 0.85);
+    background-color: var(--content-bg-color);
     backdrop-filter: blur(12px);
     border-radius: 12px;
     padding: 30px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 .grid-content-container .content {
-    background-color: rgba(30, 30, 30, 0.85);
+    background-color: var(--content-bg-color);
     backdrop-filter: blur(12px);
     border-radius: 12px;
     padding: 40px;
@@ -93,7 +171,7 @@ body {
 
 /* sidebar */
 .sidebar:hover {
-    border-color: rgba(255, 215, 112, 0.3);
+    border-color: var(--accent-color-primary);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
@@ -112,14 +190,14 @@ body {
 
 .avatar:hover {
     transform: scale(1.05);
-    border-color: #FFD770;
-    box-shadow: 0 0 20px rgba(255, 215, 112, 0.3);
+    border-color: var(--accent-color-primary);
+    box-shadow: 0 0 20px var(--accent-color-primary)55;
 }
 
 .sidebar h1 {
     font-size: 2.2em;
     margin-bottom: 15px;
-    color: #4169e1;
+    color: var(--header-h1-color);
     letter-spacing: 0.5px;
     position: relative;
     text-align: center;
@@ -134,7 +212,7 @@ body {
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #FFD770, #4169e1);
+    background: linear-gradient(90deg, var(--accent-color-primary), var(--accent-color-secondary));
     transition: width 0.3s ease;
 }
 
@@ -144,7 +222,7 @@ body {
 
 .sidebar h2 { 
     font-size: 1.4em;
-    color: #FFD770;
+    color: var(--accent-color-primary);
     font-style: italic;
     margin-top: 15px;
     margin-bottom: 25px;
@@ -154,20 +232,20 @@ body {
 
 .sidebar p {
     font-size: 1em;
-    color: #aaa;
+    color: var(--text-color-secondary);
     margin-bottom: 30px;
     text-align:left;
 }
 
 .sidebar a {
-    color: #FFD770;
+    color: var(--text-color-link);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
 }
 
 .sidebar a:hover {
-    color: #fffb00;
+    color: var(--text-color-link-hover);
     text-decoration: underline;
 }
 
@@ -187,7 +265,7 @@ body {
     transform: translateX(-50%);
     width: 50px;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #FFD770, transparent);
+    background: linear-gradient(90deg, transparent, var(--accent-color-primary), transparent);
 }
 
 .social-links a {
@@ -195,20 +273,20 @@ body {
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-    color: #64b5f6;
+    color: var(--accent-color-tertiary);
     font-size: 1em;
     transition: all 0.3s ease;
     padding: 10px;
     border-radius: 10px;
-    background: rgba(30, 30, 30, 0.5);
-    border: 1px solid rgba(255, 215, 112, 0.1);
+    background: var(--social-link-color);
+    border: 1px solid var(--content-border-color);
 }
 
 .social-links a:hover {
     color: #a7c9f5;
     transform: translateY(-5px);
-    background: rgba(30, 30, 30, 0.8);
-    border-color: rgba(255, 215, 112, 0.3);
+    background: var(--social-link-hover);
+    border-color: var(--content-border-hover);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -228,13 +306,13 @@ body {
 /* 主内容区 */
 
 .content:hover {
-    border-color: rgba(255, 215, 112, 0.3);
+    border-color: var(--content-border-hover);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .content h2 {
     font-size: 2.6em;
-    color: #2E8B57;
+    color: var(--header-h2-color);
     margin-bottom: 30px;
     border-bottom: 2px solid #333;
     padding-bottom: 18px;
@@ -245,7 +323,7 @@ body {
 
 .content h3 {
     font-size: 2em;
-    color: #e0e0e0;
+    color: var(--text-color-headers);
     margin-bottom: 30px;
     border-bottom: 2px solid #333;
     padding-bottom: 18px;
@@ -258,48 +336,47 @@ body {
     margin-bottom: 35px;
     padding: 20px;
     border-radius: 8px;
-    background: rgba(30, 30, 30, 0.5);
-    border: 1px solid rgba(255, 215, 112, 0.1);
+    background: var(--content-bg-color);
+    border: 1px solid var(--content-border-color);
     transition: all 0.3s ease;
 }
 
 .post-item:hover {
-    background: rgba(30, 30, 30, 0.8);
-    border-color: rgba(255, 215, 112, 0.3);
+    background: var(--content-bg-hover);
+    border-color: var(--content-border-hover);
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .post-title a {
     text-decoration: none;
-    color: #d1c4e9; /* 紫色标题 */
+    color: var(--post-title-color);
     font-weight: bold;
     font-size: 1.6em;
     transition: color 0.3s ease;
 }
 
 .post-title a:hover {
-    color: #b39ddb; /* 鼠标悬停时更浅的紫色 */
+    color: var(--post-title-hover);
 }
 
 .post-date {
-    color: #00BFFF;
+    color: var(--post-date-color);
     font-size: 0.95em;
     margin-bottom: 12px;
     display: block;
 }
 
 .post-description {
-    color: #aaa;
+    color: var(--text-color-secondary);
 }
 
-/* 金色点缀 */
 .sidebar h1::after {
     content: '';
     display: block;
     width: 50px;
     height: 2px;
-    background-color: #FFD770; /* 金色 */
+    background-color: var(--accent-color-primary);
     margin: 10px auto 0;
     transition: width 0.3s ease;
 }
@@ -309,7 +386,7 @@ body {
     display: block;
     width: 80px;
     height: 3px;
-    background-color: #FFD770; /* 金色 */
+    background-color: var(--accent-color-secondary);
     margin-top: 15px;
     transition: width 0.3s ease;
 }
@@ -322,12 +399,12 @@ body {
 /* --- 4. 页脚 --- */
 #page-footer {
     padding: 30px 5%; /* 百分比边距，适应不同屏幕 */
-    background-color: rgba(18, 18, 18, 0.5);
+    background-color: var(--bg-color-translucent);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     color: #999;
     font-size: 0.9em;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--page-footer-border-color);
 }
 
 .footer-grid {
@@ -354,7 +431,7 @@ body {
 
 .footer-center {
     font-size: 0.95em;
-    color: #bbb;
+    color: var(--text-color-secondary);
 }
 
 .footer-right .visitor-stats {
@@ -377,7 +454,7 @@ body {
 .footer-right .stat-value {
     font-size: 1.4em;
     font-weight: bold;
-    color: #FFD770;
+    color: var(--accent-color-primary);
     min-width: 60px;
     display: inline-block;
 }
@@ -386,9 +463,9 @@ body {
     display: inline-block;
     width: 20px;
     height: 20px;
-    border: 2px solid rgba(255,255,255,0.3);
+    border: 2px solid var(--loading-icon-border-color);
     border-radius: 50%;
-    border-top-color: #fff;
+    border-top-color: var(--loading-icon-border-top-color);
     animation: spin 1s ease-in-out infinite;
 }
 
@@ -413,7 +490,7 @@ body {
 .menu-toggle .bar {
     width: 100%;
     height: 3px;
-    background-color: #f0f0f0;
+    background-color: var(--text-color-primary);
     border-radius: 2px;
     transition: all 0.3s ease-in-out;
     transform-origin: center;
@@ -426,12 +503,12 @@ body {
     right: 0;
     width: 250px;
     height: 100vh;
-    background: rgba(30, 30, 30, 0.95);
+    background: var(--content-bg-color);
     backdrop-filter: blur(10px);
     transform: translateX(100%);
     transition: transform 0.1s ease-in-out;
     z-index: 1000;
-    border-left: 1px solid rgba(255, 215, 112, 0.2);
+    border-left: 1px solid var(--content-border-color);
     padding-top: 60px;
     z-index: 1000;
 }
@@ -456,7 +533,7 @@ body {
 }
 
 .nav-menu a {
-    color: #fff;
+    color: var(--text-color-primary);
     text-decoration: none;
     font-size: 1.2em;
     transition: all 0.3s ease;
@@ -473,13 +550,13 @@ body {
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, #FFD770, #4169e1);
+    background: linear-gradient(90deg, var(--accent-color-primary), var(--accent-color-secondary));
     transform: translateX(-100%);
     transition: transform 0.3s ease;
 }
 
 .nav-menu a:hover {
-    color: #FFD770;
+    color: var(--text-color-link-hover);
 }
 
 .nav-menu a:hover::after {
@@ -535,20 +612,20 @@ html {
     align-items: center;
     justify-content: center;
     font-size: 24px;
-    color: #FFD770;
+    color: var(--accent-color-primary);
     cursor: pointer;
-    background: rgba(30, 30, 30, 0.8);
+    background: var(--content-bg-color);
     border-radius: 50%;
-    border: 1px solid rgba(255, 215, 112, 0.3);
+    border: 1px solid var(--content-border-hover);
     transition: all 0.3s ease;
     z-index: 1001;
 }
 
 .menu-close:hover {
     transform: rotate(90deg);
-    background: rgba(30, 30, 30, 0.95);
-    border-color: rgba(255, 215, 112, 0.5);
-    box-shadow: 0 0 10px rgba(255, 215, 112, 0.3);
+    background: var(--content-bg-hover);
+    border-color: var(--content-border-hover);
+    box-shadow: 0 0 10px var(--content-border-hover);
 }
 
 /* 菜单遮罩层 */
@@ -615,15 +692,15 @@ html {
 }
 
 .category-tag {
-    background-color: rgba(46, 139, 87, 0.2);
-    color: #2E8B57;
-    border: 1px solid rgba(46, 139, 87, 0.3);
+    background-color: var(--category-tag-bg);
+    color: var(--category-tag-text);
+    border: 1px solid var(--category-tag-border);
 }
 
 .tag-tag {
-    background-color: rgba(65, 105, 225, 0.2);
-    color: #4169e1;
-    border: 1px solid rgba(65, 105, 225, 0.3);
+    background-color: var(--tag-tag-bg);
+    color: var(--tag-tag-text);
+    border: 1px solid var(--tag-tag-border);
 }
 
 .category-tag:hover, .tag-tag:hover {
@@ -634,15 +711,15 @@ html {
 .category-posts, .tag-posts {
     margin-top: 10px;
     padding: 10px;
-    background: rgba(30, 30, 30, 0.5);
+    background: var(--content-bg-color);
     border-radius: 8px;
-    border: 1px solid rgba(255, 215, 112, 0.1);
+    border: 1px solid var(--content-border-color);
 }
 
 .category-post-item, .tag-post-item {
     padding: 8px;
     margin-bottom: 8px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--content-border-color);
 }
 
 .category-post-item:last-child, .tag-post-item:last-child {
@@ -651,20 +728,20 @@ html {
 }
 
 .category-post-item a, .tag-post-item a {
-    color: #d1c4e9;
+    color: var(--post-title-color);
     text-decoration: none;
     font-size: 1.1em;
     transition: color 0.3s ease;
 }
 
 .category-post-item a:hover, .tag-post-item a:hover {
-    color: #b39ddb;
+    color: var(--post-title-hover);
 }
 
 .category-post-item .post-date, .tag-post-item .post-date {
     display: block;
     font-size: 0.9em;
-    color: #00BFFF;
+    color: var(--post-date-color);
     margin-top: 4px;
 }
 
@@ -673,8 +750,8 @@ html {
     margin-bottom: 32px;
     padding: 18px 24px;
     border-radius: 10px;
-    background: rgba(30, 30, 30, 0.7);
-    border: 1.5px solid rgba(255, 215, 112, 0.15);
+    background: var(--content-bg-color);
+    border: 1.5px solid var(--content-border-color);
     display: flex;
     align-items: center;
     gap: 18px;
@@ -682,15 +759,15 @@ html {
 }
 
 .list-item:hover {
-    background: rgba(30, 30, 30, 0.92);
-    box-shadow: 0 4px 16px rgba(255, 215, 112, 0.08);
+    background: var(--content-bg-hover);
+    box-shadow: 0 4px 16px var(--content-border-hover);
 }
 
 /* 分类/标签名字样式 */
 .category-link, .tag-link {
     font-size: 2.1em;
     font-weight: bold;
-    color: #FFD770;
+    color: var(--accent-color-primary);
     text-decoration: none;
     letter-spacing: 1px;
     transition: color 0.2s;
@@ -698,29 +775,233 @@ html {
 }
 
 .category-link:hover, .tag-link:hover {
-    color: #4169e1;
-    text-shadow: 0 2px 8px #FFD77055;
+    color: var(--accent-color-secondary);
+    text-shadow: 0 2px 8px var(--accent-color-primary)55;
 }
 
 /* 数字样式 */
 .list-item span {
     font-size: 1.5em;
-    color: #64b5f6;
+    color: var(--accent-color-tertiary);
     font-weight: bold;
     margin-left: 8px;
     letter-spacing: 1px;
 }
 
-.form-description a {
-    color: #FFD770;
-    text-decoration: none;
+/* --- Styles for Connect-to-me page form --- */
+.contact-form-container {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    border-radius: 8px;
+}
+.contact-form-container h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.form-description {
+    text-align: center;
+    color: var(--text-color-secondary);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color-primary);
     font-weight: 500;
-    transition: color 0.3s;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* --- Theme-aware styles --- */
+    background-color: var(--bg-color);
+    color: var(--text-color-primary);
+    border: 1px solid var(--content-border-color);
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color-primary);
+    box-shadow: 0 0 5px var(--accent-color-primary)55;
+}
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--accent-color-primary);
+    color: var(--bg-color); /* Inverted text color for contrast */
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.submit-button:hover {
+    filter: brightness(0.9);
 }
 
-.form-description a:hover {
-    color: #fffb00;
-    text-decoration: underline;
+
+/* --- NEW & IMPROVED Animated Theme Toggle Switch --- */
+.theme-switch-wrapper {
+    position: fixed;
+    top: 15px;
+    left: 10px;
+    z-index: 1001;
+}
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    cursor: pointer;
+}
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #3C3C3C; /* Dark mode track color */
+    border-radius: 30px;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px; /* Padding for icons */
+}
+
+/* The moving handle */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 2px;
+    bottom: 2px;
+    background-color: #6a737d; /* Dark mode handle color */
+    border-radius: 50%;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 2;
+}
+
+/* Icons positioned ON THE TRACK */
+.slider .sun, .slider .moon {
+    width: 22px;
+    height: 22px;
+    z-index: 1;
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.slider .sun {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FFD700"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM11 1h2v3h-2V1Zm0 19h2v3h-2v-3ZM3.55 4.95l1.414-1.414L7.05 5.636 5.636 7.05 3.55 4.95Zm12.728 12.728 1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121ZM1 11v2h3v-2H1Zm19 0v2h3v-2h-3ZM4.95 20.45l-1.414-1.414L5.636 16.95l1.414 1.414-2.121 2.121Zm12.728-12.728-1.414-1.414 2.121-2.121 1.414 1.414-2.121 2.121Z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+}
+.slider .moon {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M11.38 2.019a7.5 7.5 0 1 0 10.6 10.6C20.688 17.02 16.35 19.5 12 19.5A9.5 9.5 0 0 1 2.5 10c0-4.35 2.48-8.688 6.88-9.981Z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center 2px;
+    background-size: 20px;
+}
+
+/* --- Checked State --- */
+input:checked + .slider {
+    background-color: #87CEEB; /* Light mode track color (Grayish-white) */
+}
+input:checked + .slider:before {
+    transform: translateX(30px); 
+    background-color: #FFD700; /* Light mode handle color */
+    box-shadow: 0 0 2px rgba(0,0,0,0.2);
+}
+
+/* --- Fix for Modal Positioning --- */
+.theme-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background-color: var(--content-bg-color);
+    border: 1px solid var(--content-border-hover);
+    border-radius: 12px;
+    padding: 30px 40px;
+    z-index: 1003;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+.theme-modal.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+.theme-modal h3 {
+    color: var(--text-color-headers);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+.theme-modal p {
+    color: #ff0000;
+    margin-bottom: 30px;
+    font-size: 1.2em;
+}
+.modal-button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 1px solid var(--content-border-hover);
+    font-size: 1em;
+}
+.go-light-btn {
+    background-color: #fff;
+    color: #333;
+}
+.go-light-btn:hover {
+    background-color: #eee;
+}
+.cancel-btn {
+    background-color: transparent;
+    color: var(--text-color-link);
+    margin-left: 10px;
+}
+.cancel-btn:hover {
+    background-color: var(--content-bg-hover);
+}
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 1002;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+.modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* --- RWD响应式设计 (responsive web design) --- */
@@ -823,7 +1104,7 @@ html {
     }
 }
 
-/* --- RWD响应式设计 (Mobile) --- */Add commentMore actions
+/* --- RWD响应式设计 (Mobile) --- */
 @media (max-width: 600px) {
 
     /* --- 1. 布局与间距微调，最大化屏幕空间 --- */

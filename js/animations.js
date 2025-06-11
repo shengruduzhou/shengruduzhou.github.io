@@ -1,9 +1,9 @@
 // 页面加载动画
-document.addEventListener('DOMContentLoaded', () => {
-    tsParticles.load('tsparticles', {
+function loadParticles(theme) {
+    const options = {
       background: {
         color: {
-          value: '#121212'
+          value: theme === 'dark' ? '#121212' : '#f0f2f5'
         }
       },
       fpsLimit: 120,
@@ -33,10 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       particles: {
         color: {
-          value: '#FFD770' 
+          value: theme === 'dark' ? '#FFD770' : '#007bff'
         },
         links: {
-          color: '#4169e1',
+          color: theme === 'dark' ? '#4169e1' : '#17a2b8',
           distance: 150,
           enable: true,
           opacity: 0.4,
@@ -81,8 +81,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       },
       detectRetina: true
-    });
+    };
+    tsParticles.load('tsparticles', options);
+}
 
+document.addEventListener('DOMContentLoaded', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    loadParticles(currentTheme);
+
+    // Run time counter
+    show_runtime();
+    
     // 侧边栏动画
     anime({
         targets: '.sidebar-inner',
@@ -248,6 +257,7 @@ function show_runtime() {
     }, 1000);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    show_runtime(); 
+// listener for theme change event
+document.addEventListener('themeChanged', (e) => {
+    loadParticles(e.detail.theme); // Reload particles with the new theme
 });

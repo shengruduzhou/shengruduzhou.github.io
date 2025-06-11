@@ -4,10 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>渡 Ferry Personal Website</title>
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
     <link rel="stylesheet" href="{{ '/style.css' | relative_url }}" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </head>
 <body>
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="theme-checkbox">
+            <input type="checkbox" id="theme-checkbox" />
+            <div class="slider round">
+                <div class="sun"></div>
+                <div class="moon"></div>
+            </div>
+        </label>
+    </div>
+
     <div id="tsparticles"></div>
 
     <header id="hero-header">
@@ -60,6 +76,16 @@
         </div>
     </footer>
 
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="theme-modal" id="theme-modal">
+        <h3>Caution: Light mode ahead!</h3>
+        <p>XD !!!Please don't try this at home!!! lol</p>
+        <div>
+            <button class="modal-button go-light-btn" id="go-light-btn">Go Light</button>
+            <button class="modal-button cancel-btn" id="cancel-btn">Cancel</button>
+        </div>
+    </div>
+
     {% include nav-menu.html %}
     <div class="menu-toggle">
         <div class="bar"></div>
@@ -72,5 +98,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script defer src="https://busuanzi.9420.ltd/js"></script>
     <script src="{{ '/js/script.js' | relative_url }}"></script>
+    <script src="{{ '/js/theme.js' | relative_url }}"></script>
     <script src="{{ '/js/animations.js' | relative_url }}"></script>
 </html>
