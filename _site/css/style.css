@@ -906,15 +906,16 @@ html {
     z-index: 1;
     transition: opacity 0.4s ease; /* Animate opacity only */
     background-repeat: no-repeat;
-    background-position: center 2px;
     background-size: 20px;
 }
 .slider .sun {
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FFD700"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM11 1h2v3h-2V1Zm0 19h2v3h-2v-3ZM3.55 4.95l1.414-1.414L7.05 5.636 5.636 7.05 3.55 4.95Zm12.728 12.728 1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121ZM1 11v2h3v-2H1Zm19 0v2h3v-2h-3ZM4.95 20.45l-1.414-1.414L5.636 16.95l1.414 1.414-2.121 2.121Zm12.728-12.728-1.414-1.414 2.121-2.121 1.414 1.414-2.121 2.121Z"/></svg>');
+    background-position: center;
     opacity: 0; 
 }
 .slider .moon {
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M11.38 2.019a7.5 7.5 0 1 0 10.6 10.6C20.688 17.02 16.35 19.5 12 19.5A9.5 9.5 0 0 1 2.5 10c0-4.35 2.48-8.688 6.88-9.981Z"/></svg>');
+    background-position: center 2px;
     opacity: 1;
 }
 
@@ -1120,8 +1121,8 @@ input:checked + .slider .moon {
     }
 
     .slider .sun, .slider .moon {
-        width: 12px;
-        height: 12px;
+        width: 19px;
+        height: 19px;
     }
 
     input:checked + .slider:before {
