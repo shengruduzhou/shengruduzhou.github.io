@@ -947,22 +947,26 @@ input:checked + .slider:before {
     visibility: hidden;
     transition: all 0.3s ease-in-out;
 }
+
 .theme-modal.visible {
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, -50%) scale(1);
 }
+
 .theme-modal h3 {
     color: var(--text-color-headers);
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 1.5em;
 }
+
 .theme-modal p {
     color: var(--text-color-secondary);
     margin-bottom: 30px;
     font-size: 1.2em;
 }
+
 .modal-button {
     padding: 10px 20px;
     border-radius: 8px;
@@ -972,13 +976,16 @@ input:checked + .slider:before {
     border: 1px solid var(--content-border-hover);
     font-size: 1em;
 }
+
 .go-light-btn {
     background-color: #fff;
     color: #333;
 }
+
 .go-light-btn:hover {
     background-color: #eee;
 }
+
 .cancel-btn {
     background-color: transparent;
     color: var(--text-color-link);
@@ -987,6 +994,7 @@ input:checked + .slider:before {
 .cancel-btn:hover {
     background-color: var(--content-bg-hover);
 }
+
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -999,6 +1007,7 @@ input:checked + .slider:before {
     visibility: hidden;
     transition: opacity 0.3s ease;
 }
+
 .modal-overlay.visible {
     opacity: 1;
     visibility: visible;
@@ -1116,9 +1125,8 @@ input:checked + .slider:before {
     }
 
     .slider .sun, .slider .moon {
-        width: 15px;
-        height: 15px;
-        background-size: 15px;
+        width: 12px;
+        height: 12px;
     }
 
     input:checked + .slider:before {
