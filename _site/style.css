@@ -1089,7 +1089,14 @@ input:checked + .slider:before {
     }
 
     .menu-toggle {
+        transform: scale(0.8);
+        transform-origin: top left;
         z-index: 1002;
+    }
+
+    .theme-switch-wrapper {
+        transform: scale(0.8);
+        transform-origin: top left;
     }
 
     /* --- 6. 修复内容溢出问题 --- */
