@@ -556,7 +556,7 @@ body {
 }
 
 .nav-menu a:hover {
-    color: var(--text-color-link-hover);
+    color: var(--accent-color-primary);
 }
 
 .nav-menu a:hover::after {
