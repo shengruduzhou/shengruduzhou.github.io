@@ -67,9 +67,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const hidePortfolioModal = () => {
-        portfolioModal.classList.remove('visible');
-        overlay.classList.remove('visible');
-    }
+        if(portfolioModal) portfolioModal.classList.remove('visible');
+        if(!document.querySelector('.portfolio-modal.visible')) {
+            overlay.classList.remove('visible');
+        }
+    };
 
     if(portfolioLink) {
         portfolioLink.addEventListener('click', (e) => {
