@@ -34,6 +34,7 @@
     --page-footer-border-color: rgba(255, 255, 255, 0.1);
     --loading-icon-border-color: rgba(255, 255, 255, 0.3);
     --loading-icon-border-top-color: #fff;
+    --portfolio-btn-color: rgba(255, 255, 255, 0.85);
 }
 
 [data-theme='light'] {
@@ -71,6 +72,7 @@
     --page-footer-border-color: rgba(0, 0, 0, 0.1);
     --loading-icon-border-color: rgba(0, 0, 0, 0.2);
     --loading-icon-border-top-color: #333;
+    --portfolio-btn-color: rgba(30, 30, 30, 0.85);
 }
 
 body {
@@ -943,7 +945,7 @@ input:checked + .slider .moon {
     opacity: 0;
 }
 
-/* --- Fix for Modal Positioning --- */
+/* --- Theme Switch Modal Positioning --- */
 .theme-modal {
     position: fixed;
     top: 50%;
@@ -1015,6 +1017,58 @@ input:checked + .slider .moon {
 .modal-overlay.visible {
     opacity: 1;
     visibility: visible;
+}
+
+/* --- Enter Portfolio Modal Positioning --- */
+.portfolio-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background-color: rgba(30, 30, 30, 0.85);
+    border: 1px solid var(--content-border-hover);
+    border-radius: 12px;
+    padding: 30px 40px;
+    z-index: 1003;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+.portfolio-modal.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+.portfolio-modal h3 {
+    color: #ffd900;
+    margin-top: 0;
+    margin-bottom: 14px;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+.portfolio-modal p {
+    text-align: center;
+    color: #ff0000;
+    margin-bottom: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.portfolio-confirm-btn {
+    background-color: rgba(255, 100, 100, 0.4);
+    color: var(--portfolio-btn-color);
+}
+.portfolio-confirm-btn:hover {
+    background-color: rgba(255, 0, 0, 0.8);
+}
+.portfolio-cancel-btn {
+    background-color: rgba(100, 255, 100, 0.4);
+    color: var(--portfolio-btn-color);
+    margin-left: 10px;
+}
+.portfolio-cancel-btn:hover {
+    background-color: rgba(0, 255, 0, 0.8);
 }
 
 /* --- RWD响应式设计 (responsive web design) --- */
@@ -1149,6 +1203,17 @@ input:checked + .slider .moon {
     }
     .modal-button {
         padding: 8px 16px;
+        font-size: 0.9em;
+    }
+
+    .portfolio-modal {
+        width: 90vw;
+        padding: 20px;
+    }
+    .portfolio-modal h3 {
+        font-size: 1.2em;
+    }
+    .protfolio-modal p {
         font-size: 0.9em;
     }
 

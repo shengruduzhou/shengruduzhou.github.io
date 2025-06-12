@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeCheckbox = document.getElementById('theme-checkbox');
     const htmlEl = document.documentElement;
 
-    // Modal elements from your HTML
+    // Modal Theme elements
     const modal = document.getElementById('theme-modal');
     const overlay = document.getElementById('modal-overlay');
     const goLightBtn = document.getElementById('go-light-btn');
@@ -54,7 +54,45 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     cancelBtn.addEventListener('click', hideModal);
-    overlay.addEventListener('click', hideModal);
+
+    // Portfolio Enter Check
+    const portfolioLink = document.querySelector('a[href="/portfolio.html"]');
+    const portfolioModal = document.getElementById('portfolio-modal');
+    const portfolioConfirmBtn = document.getElementById('portfolio-confirm-btn');
+    const portfolioCancelBtn = document.getElementById('portfolio-cancel-btn');
+
+    const showPortfolioModal = () => {
+        portfolioModal.classList.add('visible');
+        overlay.classList.add('visible');
+    }
+
+    const hidePortfolioModal = () => {
+        portfolioModal.classList.remove('visible');
+        overlay.classList.remove('visible');
+    }
+
+    if(portfolioLink) {
+        portfolioLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            showPortfolioModal();
+        });
+    }
+
+    if(portfolioConfirmBtn) {
+        portfolioConfirmBtn.addEventListener('click', () => {
+            hidePortfolioModal();
+            window.location.href = '/portfolio.html';
+        });
+    }
+
+    if(portfolioCancelBtn) {
+        portfolioCancelBtn.addEventListener('click', hidePortfolioModal);
+    }
+
+    overlay.addEventListener('click', () =>{
+        hideModal();
+        hidePortfolioModal();
+    });
 
     applyTheme(currentTheme);
 });
