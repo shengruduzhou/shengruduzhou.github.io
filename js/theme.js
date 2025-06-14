@@ -60,8 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const portfolioModal = document.getElementById('portfolio-modal');
     const portfolioConfirmBtn = document.getElementById('portfolio-confirm-btn');
     const portfolioCancelBtn = document.getElementById('portfolio-cancel-btn');
-    
-            const lottiePlayer = document.getElementById('lottie-warning-player')
+    const lottiePlayer = document.getElementById('lottie-warning-player')
 
     const showPortfolioModal = () => {
         portfolioModal.classList.add('visible');
