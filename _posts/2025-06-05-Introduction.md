@@ -103,7 +103,7 @@ tags: ["Information", "Myself", "experience"]
 
 ---
 
-### 📫 Connect Me
+### 📫 Contact Me
 
 <p align="left">
     <a href="mailto:shanhefu@gmail.com" target="blank"><img align="center" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="shanhefu@gmail.com" /></a>
