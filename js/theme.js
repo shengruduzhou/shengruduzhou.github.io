@@ -60,6 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const portfolioModal = document.getElementById('portfolio-modal');
     const portfolioConfirmBtn = document.getElementById('portfolio-confirm-btn');
     const portfolioCancelBtn = document.getElementById('portfolio-cancel-btn');
+    
+            const lottiePlayer = document.getElementById('lottie-warning-player')
 
     const showPortfolioModal = () => {
         portfolioModal.classList.add('visible');
@@ -77,6 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
         portfolioLink.addEventListener('click', (e) => {
             e.preventDefault();
             showPortfolioModal();
+            if(lottiePlayer){
+                lottiePlayer.play();
+            }
         });
     }
 
@@ -88,7 +93,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if(portfolioCancelBtn) {
-        portfolioCancelBtn.addEventListener('click', hidePortfolioModal);
+        portfolioCancelBtn.addEventListener('click', () => {
+            hidePortfolioModal();
+            if(lottiePlayer){
+                lottiePlayer.stop();
+            }
+        });
     }
 
     overlay.addEventListener('click', () =>{
