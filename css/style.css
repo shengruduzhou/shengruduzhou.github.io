@@ -827,7 +827,6 @@ html {
 .form-group textarea {
     width: 100%;
     max-width: 600px;
-    min-width: 600px;
     min-height: 40px;
     padding: 0.8rem 1rem;
     border-radius: 5px;
