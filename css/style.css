@@ -827,6 +827,7 @@ html {
 .form-group textarea {
     width: 100%;
     max-width: 600px;
+    min-width: 600px;
     min-height: 40px;
     padding: 0.8rem 1rem;
     border-radius: 5px;
@@ -1159,6 +1160,13 @@ input:checked + .slider .moon {
         transform: scale(0.8);
         transform-origin: top left;
         z-index: 1002;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        max-width: 300px;
+        min-width: 300px;
     }
 
     .theme-switch-wrapper {
