@@ -32,7 +32,8 @@ tags: ["Information", "Myself", "experience"]
   <br />
   <a href="https://github.com/shengruduzhou">
     <img src="https://visitor-badge.laobi.icu/badge?page_id=shengruduzhou.shengruduzhou&left_text=Visitors" alt="visitor badge"/>
-  </a>
+  </a><br />
+  <a href="https://shengruduzhou.github.io/assets/CV.pdf" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Resume-d14836?style=for-the-badge&logo=reactiveresume&logoColor=white" alt="Resume/CV"/></a>
 </p>
 
 ---
