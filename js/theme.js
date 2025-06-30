@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(portfolioConfirmBtn) {
         portfolioConfirmBtn.addEventListener('click', () => {
             hidePortfolioModal();
-            window.location.href = '/portfolio.html';
+            window.location.href = 'https://shanhefu-portfolio.vercel.app/';
         });
     }
 
