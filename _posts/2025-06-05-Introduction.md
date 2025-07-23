@@ -33,25 +33,33 @@ tags: ["Information", "Myself", "experience"]
   <a href="https://github.com/shengruduzhou">
     <img src="https://visitor-badge.laobi.icu/badge?page_id=shengruduzhou.shengruduzhou&left_text=Visitors" alt="visitor badge"/>
   </a><br />
-  <a href="https://shengruduzhou.github.io/assets/CV.pdf" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Resume-d14836?style=for-the-badge&logo=reactiveresume&logoColor=white" alt="Resume/CV"/></a>
+  <a href="https://shengruduzhou.github.io/assets/CV.pdf" target="_blank" rel="noopener noreferrer">
+      <img src="https://img.shields.io/badge/Resume-d14836?style=for-the-badge&logo=reactiveresume&logoColor=white" alt="Resume/CV"/>
+  </a>
+  <a href="https://shengruduzhou.github.io/assets/CV_CN.pdf" target="_blank" rel="noopener noreferrer">
+      <img src="https://img.shields.io/badge/Resume_CN-E0E0E0?style=for-the-badge&logo=reactiveresume&logoColor=black" alt="Resume/CV_CN"/>
+  </a>
 </p>
 
 ---
+
 ### 🌐 About Me
 
-🧠I am a Master's student at Sophia University's Graduate School of Science and Engineering, specializing in Computer Science (Information Science). 
+🧠I am a Master's student at Sophia University's Graduate School of Science and Engineering, specializing in Computer Science (Information Science).
 
 - 🎓 **Education**: B.S. from Teikyo University (Apr 2021 - Mar 2025) & M.S. candidate at Sophia University (Apr 2025 - Mar 2027).
   - **Relevant Coursework**: Data Structures & Algorithms, Formal Languages & Automata, Information Theory, Database Systems, Computer Architecture, Computer Organization, Operating Systems, Digital Circuits, Analog Circuits.
-- 🔭 **Current Research**:  I am currently a member of the Intelligent Sensing Laboratory [@islab-sophia](https://github.com/islab-sophia), with a research focus on Computer Vision.
+- 🔭 **Current Research**: I am currently a member of the Intelligent Sensing Laboratory [@islab-sophia](https://github.com/islab-sophia), with a research focus on Computer Vision.
   - 🌟My master's thesis is on a "Spherical-aware Masked Autoencoder for 360° Image Completion," primarily utilizing Vision Transformers and self-supervised learning techniques. Additionally, through my lab's research activities, I have gained some exposure to related technologies such as NeRFs and Stable Diffusion.
 - 🌱 **Career Goal**: My career goal is to become a Software Development Engineer (SDE) or a Machine Learning Engineer (MLE). I have practical experience in web development relevant for an SDE role, and I am actively learning the skills required for an MLE position.
 - 💬 **Languages**: Fluent in **Chinese (Native)**, Japanese (Fluent), English (Intermediate).
 
 ### 🏆 Key Projects & Achievements
+
 - **Scholarship Recipient**: Awarded the **JASSO Scholarship** and was recommended for the Rotary Yoneyama Memorial Scholarship.
 
-###  hobbies & Interests
+### hobbies & Interests
+
 - 🎵 Music (Listening & Singing) 🏀 Sports (Ball Games & Fitness) 🗺️ Traveling 🎮 Gaming
 
 ---
@@ -93,7 +101,6 @@ tags: ["Information", "Myself", "experience"]
   <strong>CI/CD Tools:</strong><br>
   <a href="https://github.com/features/actions" target="_blank" rel="noreferrer"><img alt="GitHub Actions" src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white"></a>
 </p>
-
 
 ---
 
