@@ -1114,11 +1114,70 @@ input:checked + .slider .moon {
     transform: rotate(180deg);
 }
 
-@media (max-width: 768px) {
-    #page-nav-button {
-        left: 15px;
-        bottom: 15px;
-    }
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 1rem; /* Added horizontal padding */
+    font-family: inherit;
+}
+
+.pagination .page-number {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-color-secondary);
+    user-select: none;
+    text-align: center;
+}
+
+/* Base style for all pagination items */
+.pagination .previous,
+.pagination .next {
+    position: relative;
+    padding: 12px 24px;
+    border: 1px solid var(--border-color-translucent, rgba(255, 255, 255, 0.1));
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    z-index: 1;
+    overflow: hidden;
+    background: var(--background-color-translucent, rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Styles for clickable links */
+.pagination a.previous,
+.pagination a.next {
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+/* Hover effect for clickable links */
+.pagination a.previous:hover,
+.pagination a.next:hover {
+    transform: translateY(-3px) scale(1.05);
+    border-color: var(--accent-color);
+    box-shadow: 0 8px 25px rgba(var(--accent-color-rgb), 0.3);
+    color: var(--accent-color);
+}
+
+/* Active/Click effect */
+.pagination a.previous:active,
+.pagination a.next:active {
+    transform: translateY(-1px) scale(1.0);
+    box-shadow: 0 4px 15px rgba(var(--accent-color-rgb), 0.2);
+}
+
+/* Styles for the disabled state */
+.pagination span.disabled {
+    color: var(--text-color-muted);
+    background: transparent;
+    border-color: var(--border-color);
+    cursor: not-allowed;
+    opacity: 0.5;
 }
 
 /* --- RWD响应式设计 (responsive web design) --- */
@@ -1276,5 +1335,36 @@ input:checked + .slider .moon {
     .content pre, .content code {
         white-space: pre-wrap;
         word-wrap: break-word;
+    }
+}
+
+@media (max-width: 768px) {
+    #page-nav-button {
+        left: 15px;
+        bottom: 15px;
+    }
+    .pagination {
+        padding: 2rem 0.5rem;
+    }
+
+    .pagination .previous,
+    .pagination .next {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+        border-radius: 8px;
+    }
+
+    .pagination .page-number {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pagination .page-number {
+        display: none;
+    }
+
+    .pagination {
+        justify-content: space-around;
     }
 }
