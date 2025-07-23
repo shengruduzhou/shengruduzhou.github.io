@@ -1183,17 +1183,15 @@ input:checked + .slider .moon {
 /* --- RWD响应式设计 (responsive web design) --- */
 @media (max-width: 900px) {
 
-    /* --- 1. 核心布局切换：双栏变单栏 --- */
     .main-grid {
-        grid-template-columns: 1fr; /* 单栏布局 */
+        grid-template-columns: 1fr;
         gap: 20px;
     }
 
     .grid-sidebar-container {
-        position: static; /* 在移动端，侧边栏不置顶，随页面滚动 */
+        position: static;
     }
 
-    /* --- 2. 调整整体间距与边距 --- */
     #main-content-wrapper {
         padding: 10px;
     }
@@ -1206,7 +1204,6 @@ input:checked + .slider .moon {
         padding: 25px 20px;
     }
 
-    /* --- 3. 字体大小优化，提升移动端阅读体验 --- */
     body {
         font-size: 15px;
         line-height: 1.6;
@@ -1224,7 +1221,6 @@ input:checked + .slider .moon {
     .content h3 { font-size: 1.6em; }
     .post-title a { font-size: 1.4em; }
 
-    /* --- 4. 页脚布局切换为垂直堆叠 --- */
     .footer-grid {
         flex-direction: column;
         gap: 25px;
@@ -1237,7 +1233,6 @@ input:checked + .slider .moon {
         justify-content: center;
     }
 
-    /* --- 5. 移动端全屏菜单样式 --- */
     .nav-menu {
         width: 100%;
         transform: translateX(100%);
