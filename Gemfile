@@ -1,5 +1,4 @@
 source "https://rubygems.org"
-gem "rails"
 gem "jekyll", "~> 3.9.5"
 gem "jekyll-paginate"
 gem "kramdown-parser-gfm"

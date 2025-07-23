@@ -12,14 +12,19 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Ruby and Bundler
+      - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
-          bundler-cache: true
+
+      - name: Clean Gemfile.lock to ensure fresh install
+        run: rm -f Gemfile.lock
+
+      - name: Install dependencies
+        run: bundle install
 
       - name: Build Jekyll site
         run: bundle exec jekyll build
