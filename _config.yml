@@ -3,3 +3,8 @@ description: 暗闇で生きている良かった
 github_username:  shengruduzhou
 url: "https://shengruduzhou.github.io"
 baseurl: ""
+plugins:
+  - jekyll-paginate
+
+paginate: 10
+paginate_path: "/page:num/"

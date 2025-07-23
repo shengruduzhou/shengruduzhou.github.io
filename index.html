@@ -3,7 +3,7 @@ layout: default
 ---
 <h2>Posts & Projects</h2>
 <div class="posts-container">
-  {% for post in site.posts %}
+  {% for post in paginator.posts %}
     <div class="post-item">
         <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
         <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
@@ -24,4 +24,26 @@ layout: default
         </div>
     </div>
   {% endfor %}
+</div>
+
+<div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | relative_url }}" class="previous">
+        &laquo; Newer Posts
+      </a>
+    {% else %}
+      <span class="previous disabled">&laquo; Newer Posts</span>
+    {% endif %}
+
+    <span class="page-number">
+      Page {{ paginator.page }} of {{ paginator.total_pages }}
+    </span>
+
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | relative_url }}" class="next">
+        Older Posts &raquo;
+      </a>
+    {% else %}
+      <span class="next disabled">Older Posts &raquo;</span>
+    {% endif %}
 </div>
