@@ -1114,11 +1114,12 @@ input:checked + .slider .moon {
     transform: rotate(180deg);
 }
 
+/* style for all pagination */
 .pagination {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3rem 1rem; /* Added horizontal padding */
+    padding: 3rem 1rem;
     font-family: inherit;
 }
 
