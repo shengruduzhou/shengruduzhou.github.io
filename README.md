@@ -1,2 +1,2 @@
 # shengruduzhou.github.io
-My page about introduction, etc.(Jekyll)
+My blog about posts, introduction, etc.(Jekyll)
