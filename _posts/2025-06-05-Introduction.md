@@ -106,14 +106,20 @@ tags: ["Information", "Myself", "experience"]
 
 ### 📊 GitHub Stats
 
-<p align="left"> <a href="https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=dracula"><img src="https://github-profile-trophy.vercel.app/?username=shengruduzhou" alt="shengruduzhou" /></a> </p>
+<p align="center">
+  <a href="https://github-profile-trophy.vercel.app/?username=shengruduzhou&theme=dracula" target="_blank" rel="noopener noreferrer">
+    <img src="https://github-profile-trophy.vercel.app/?username=shengruduzhou&theme=dracula" alt="shengruduzhou's GitHub Profile Trophy" />
+  </a>
+</p>
 
 <p align="center">
-  <a href="https://github.com/shengruduzhou" target="_blank" rel="noreferrer">
-    <a href="http://shengruduzhou.github.io/" target="blank"><img src="https://github-readme-stats.vercel.app/api?username=shengruduzhou&show_icons=true&locale=en&theme=ambient_gradient&count_private=true" alt="shengruduzhou's github stats"/></a>
-    <a href="http://shengruduzhou.github.io/" target="blank"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shengruduzhou&layout=compact&locale=en&theme=ambient_gradient" alt="shengruduzhou's top langs"/></a>
+  <a href="https://github.com/shengruduzhou" target="_blank" rel="noopener noreferrer">
+    <img src="https://github-readme-stats.vercel.app/api?username=shengruduzhou&show_icons=true&locale=en&theme=ambient_gradient&count_private=true" alt="shengruduzhou's GitHub Stats"/>
   </a>
-    <img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=shengruduzhou&" alt="shengruduzhou" />
+  <a href="https://github.com/shengruduzhou" target="_blank" rel="noopener noreferrer">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shengruduzhou&layout=compact&locale=en&theme=ambient_gradient" alt="shengruduzhou's Top Languages"/>
+  </a>
+  <img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=shengruduzhou&" alt="shengruduzhou's GitHub Streak" />
 </p>
 
 ---
