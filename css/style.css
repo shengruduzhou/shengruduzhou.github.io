@@ -1036,11 +1036,13 @@ input:checked + .slider .moon {
     visibility: hidden;
     transition: all 0.3s ease-in-out;
 }
+
 .portfolio-modal.visible {
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, -50%) scale(1);
 }
+
 .portfolio-modal h3 {
     color: #ffd900;
     margin-top: 0;
@@ -1048,6 +1050,7 @@ input:checked + .slider .moon {
     font-size: 1.6em;
     font-weight: bold;
 }
+
 .portfolio-modal p {
     text-align: center;
     color: #ffd900;
@@ -1055,18 +1058,22 @@ input:checked + .slider .moon {
     font-size: 1.2em;
     font-weight: bold;
 }
+
 .portfolio-confirm-btn {
     background-color: rgba(255, 100, 100, 0.4);
     color: var(--portfolio-btn-color);
 }
+
 .portfolio-confirm-btn:hover {
     background-color: rgba(255, 0, 0, 0.8);
 }
+
 .portfolio-cancel-btn {
     background-color: rgba(100, 255, 100, 0.4);
     color: var(--portfolio-btn-color);
     margin-left: 10px;
 }
+
 .portfolio-cancel-btn:hover {
     background-color: rgba(0, 255, 0, 0.8);
 }
