@@ -50,7 +50,7 @@ tags: ["Information", "Myself", "experience"]
 - 🎓 **Education**: B.Eng. from Teikyo University (Apr 2021 - Mar 2025) & M.Eng. candidate at Sophia University (Apr 2025 - Mar 2027).
   - **Relevant Coursework**: Data Structures & Algorithms, Formal Languages & Automata, Information Theory, Database Systems, Computer Architecture, Computer Organization, Operating Systems, Digital Circuits, Analog Circuits.
 - 🔭 **Current Research**: I am currently a member of the Intelligent Sensing Laboratory [@islab-sophia](https://github.com/islab-sophia), with a research focus on Computer Vision.
-  - 🌟My master's thesis is on a "Panoramic AutoEncoder" primarily utilizing Vision Transformers and self-supervised learning techniques. Additionally, through my lab's research activities, I have gained some exposure to related technologies such as NeRFs, 3DGS and Stable Diffusion.
+  - 🌟My master's thesis is on a "Panoramic AutoEncoder", primarily utilizing Vision Transformers and self-supervised learning techniques. Additionally, through my lab's research activities, I have gained some exposure to related technologies such as NeRFs, 3DGS and Stable Diffusion.
 - 🌱 **Career Goal**: My career goal is to become a Software Development Engineer (SDE) or a Machine Learning Engineer (MLE). I have practical experience in web development relevant for an SDE role, and I am actively learning the skills required for an MLE position.
 - 💬 **Languages**: Fluent in **Chinese (Native)**, Japanese (Fluent), English (Intermediate).
 
