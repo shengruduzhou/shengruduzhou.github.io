@@ -113,13 +113,18 @@ tags: ["Information", "Myself", "experience"]
 </p>
 
 <p align="center">
-  <a href="https://github.com/shengruduzhou" target="_blank" rel="noopener noreferrer">
-    <img src="https://github-readme-stats.vercel.app/api?username=shengruduzhou&show_icons=true&locale=en&theme=ambient_gradient&count_private=true" alt="shengruduzhou's GitHub Stats"/>
+  <a href="https://github.com/shengruduzhou">
+    <img
+      src="https://github-stats-extended.vercel.app/api?username=shengruduzhou&show_icons=true&locale=en&theme=tokyonight"
+      alt="shengruduzhou's github stats"
+    />
   </a>
-  <a href="https://github.com/shengruduzhou" target="_blank" rel="noopener noreferrer">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shengruduzhou&layout=compact&locale=en&theme=ambient_gradient" alt="shengruduzhou's Top Languages"/>
+  <a href="https://github.com/shengruduzhou">
+    <img
+      src="https://github-stats-extended.vercel.app/api/top-langs/?username=shengruduzhou&layout=compact&locale=en&theme=tokyonight"
+      alt="shengruduzhou's top langs"
+    />
   </a>
-  <img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=shengruduzhou&" alt="shengruduzhou's GitHub Streak" />
 </p>
 
 ---
