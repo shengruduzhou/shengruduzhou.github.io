@@ -1,0 +1,577 @@
+/* =========================================================
+   Ferry UI V2 overrides
+   Keeps the original Jekyll structure and isolates the
+   expandable navigation, restored effects and content fixes.
+   ========================================================= */
+
+:root,
+[data-theme='dark'] {
+    --v2-surface: rgba(34, 34, 37, 0.94);
+    --v2-border: rgba(255, 215, 112, 0.16);
+    --v2-border-strong: rgba(255, 215, 112, 0.40);
+    --v2-gold: #ffd770;
+    --v2-blue: #4169e1;
+    --v2-green: #2e8b57;
+    --v2-text: #e7e7e7;
+    --v2-muted: #a7a7ad;
+    --v2-subtle: #78787f;
+    --v2-page-width: 1180px;
+}
+
+[data-theme='light'] {
+    --v2-surface: rgba(255, 255, 255, 0.96);
+    --v2-border: rgba(36, 55, 96, 0.14);
+    --v2-border-strong: rgba(65, 105, 225, 0.36);
+    --v2-gold: #b67700;
+    --v2-blue: #3158c7;
+    --v2-green: #237148;
+    --v2-text: #17191f;
+    --v2-muted: #555b67;
+    --v2-subtle: #7e8490;
+}
+
+body.menu-open,
+body.modal-open {
+    overflow: hidden;
+}
+
+/* ---------- Original background, stronger particles ---------- */
+#tsparticles {
+    opacity: 0.82 !important;
+}
+
+.ambient-grid {
+    opacity: 0.45;
+    background-size: 64px 64px !important;
+}
+
+.hero-header {
+    width: min(1760px, calc(100% - 32px));
+    min-height: min(90vh, 900px) !important;
+    margin: 16px auto 0 !important;
+    background-image:
+        linear-gradient(180deg, rgba(8, 8, 11, 0.18), rgba(8, 8, 11, 0.72)),
+        url('/picture/Vision.jpg') !important;
+    background-position: center calc(50% + var(--hero-parallax, 0px)) !important;
+    background-size: cover !important;
+}
+
+.hero-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        radial-gradient(circle at 72% 24%, rgba(65, 105, 225, 0.22), transparent 34%),
+        radial-gradient(circle at 22% 80%, rgba(255, 215, 112, 0.14), transparent 30%);
+    pointer-events: none;
+}
+
+@media (min-width: 901px) {
+    .hero-header {
+        background-attachment: fixed !important;
+    }
+}
+
+/* ---------- Expandable desktop navigation ---------- */
+.site-nav-shell {
+    width: min(var(--v2-page-width), calc(100% - 48px)) !important;
+    overflow: hidden;
+    border-color: var(--v2-border) !important;
+    background: var(--v2-surface) !important;
+    transition:
+        width 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+        padding 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+        border-radius 0.38s ease,
+        box-shadow 0.25s ease !important;
+}
+
+.site-nav-shell.nav-compact {
+    width: 116px !important;
+    padding-inline: 7px !important;
+    border-radius: 999px !important;
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.30) !important;
+}
+
+.site-nav-shell.nav-compact:hover,
+.site-nav-shell.nav-compact:focus-within,
+.site-nav-shell.nav-pinned {
+    width: min(var(--v2-page-width), calc(100% - 48px)) !important;
+    padding: 8px 10px 8px 14px !important;
+    border-radius: 16px !important;
+}
+
+.site-brand-text,
+.desktop-nav,
+.theme-toggle {
+    overflow: hidden;
+    opacity: 1;
+    transition:
+        max-width 0.32s ease,
+        opacity 0.20s ease,
+        transform 0.32s ease !important;
+}
+
+.site-brand-text {
+    max-width: 100px;
+    white-space: nowrap;
+}
+
+.desktop-nav {
+    max-width: 640px;
+}
+
+.site-nav-shell.nav-compact:not(:hover):not(:focus-within):not(.nav-pinned) .site-brand-text,
+.site-nav-shell.nav-compact:not(:hover):not(:focus-within):not(.nav-pinned) .desktop-nav,
+.site-nav-shell.nav-compact:not(:hover):not(:focus-within):not(.nav-pinned) .theme-toggle {
+    max-width: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none;
+    transform: translateY(-5px) scale(0.94);
+}
+
+.site-nav-shell.nav-compact:not(:hover):not(:focus-within):not(.nav-pinned) .nav-actions {
+    gap: 0 !important;
+}
+
+.menu-toggle {
+    display: block !important;
+}
+
+.menu-toggle span {
+    transform-origin: center;
+    transition: transform 0.28s ease, opacity 0.20s ease !important;
+}
+
+.menu-toggle[aria-expanded='true'] span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded='true'] span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle[aria-expanded='true'] span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ---------- Hero refinements ---------- */
+.hero-lead {
+    max-width: 760px !important;
+    color: rgba(255, 255, 255, 0.84) !important;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.44);
+}
+
+.status-dot {
+    animation: v2-status-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes v2-status-pulse {
+    50% {
+        box-shadow:
+            0 0 0 8px rgba(46, 139, 87, 0.02),
+            0 0 26px rgba(46, 139, 87, 0.90);
+    }
+}
+
+.hero-scroll {
+    animation: v2-scroll-float 2.6s ease-in-out infinite;
+}
+
+@keyframes v2-scroll-float {
+    50% {
+        transform: translate(-50%, 5px);
+    }
+}
+
+/* ---------- Keep Tech Stack badges horizontal ---------- */
+.content p > a:has(img[src*="shields.io"]),
+.content p > a:has(img[src*="badge"]) {
+    display: inline-block !important;
+    margin: 3px 3px 3px 0;
+    line-height: 0;
+    text-decoration: none;
+}
+
+.content img[src*="shields.io"],
+.content img[src*="badge"] {
+    display: inline-block !important;
+    width: auto !important;
+    max-width: 100%;
+    height: auto !important;
+    margin: 0 !important;
+    vertical-align: middle;
+}
+
+/* ---------- Original two-column structure ---------- */
+.main-content-wrapper {
+    width: min(var(--v2-page-width), calc(100% - 32px)) !important;
+}
+
+.main-grid {
+    grid-template-columns: 290px minmax(0, 1fr) !important;
+}
+
+.post-item {
+    overflow: hidden;
+}
+
+.post-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(var(--v2-gold), var(--v2-blue));
+    opacity: 0;
+    transform: scaleY(0.45);
+    transition: opacity 0.25s ease, transform 0.35s ease;
+}
+
+.post-item:hover::before,
+.post-item:focus-within::before {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+/* ---------- Drawer retained on desktop and mobile ---------- */
+.mobile-nav-overlay {
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    transition: opacity 0.28s ease, visibility 0.28s ease !important;
+}
+
+.mobile-nav {
+    top: 14px !important;
+    right: 14px !important;
+    bottom: 14px;
+    height: auto !important;
+    width: min(360px, calc(100vw - 28px)) !important;
+    border: 1px solid var(--v2-border-strong) !important;
+    border-radius: 20px;
+    background: var(--v2-surface) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(150%);
+    backdrop-filter: blur(24px) saturate(150%);
+    box-shadow: -18px 0 70px rgba(0, 0, 0, 0.40);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(calc(100% + 30px)) scale(0.98) !important;
+    transition:
+        transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.24s ease,
+        visibility 0.24s ease !important;
+}
+
+.mobile-nav.open,
+.mobile-nav.nav-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0) scale(1) !important;
+}
+
+.mobile-nav-links a {
+    position: relative;
+    overflow: hidden;
+}
+
+.mobile-nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 7px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--v2-gold), var(--v2-blue));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+.mobile-nav-links a:hover::after,
+.mobile-nav-links a:focus-visible::after {
+    transform: scaleX(1);
+}
+
+/* ---------- Animated page navigation ---------- */
+.page-nav-button {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24);
+    transform: translateY(12px) scale(0.95) !important;
+    transition:
+        opacity 0.22s ease,
+        transform 0.25s ease,
+        border-color 0.20s ease,
+        color 0.20s ease !important;
+}
+
+.page-nav-button.visible {
+    transform: translateY(0) scale(1) !important;
+}
+
+.page-nav-button.visible:hover {
+    transform: translateY(-2px) scale(1.02) !important;
+}
+
+/* ---------- Footer runtime and visitor counters ---------- */
+.footer-grid {
+    grid-template-columns: minmax(180px, 1.25fr) minmax(190px, 1fr) auto auto !important;
+    gap: 28px !important;
+}
+
+.footer-identity p,
+.footer-meta p {
+    margin: 4px 0 0;
+    color: var(--v2-subtle);
+    font-size: 0.78rem;
+}
+
+#runtime_span {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.025em;
+}
+
+.visitor-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.stat-item {
+    min-width: 78px;
+    display: grid;
+    gap: 2px;
+}
+
+.stat-label {
+    color: var(--v2-subtle);
+    font-size: 0.66rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.stat-value {
+    color: var(--v2-gold);
+    font-size: 1rem;
+    font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Refined theme and Portfolio modals ---------- */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1500;
+    background: rgba(0, 0, 0, 0.68);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.28s ease, visibility 0.28s ease;
+}
+
+.modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.site-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1550;
+    width: min(460px, calc(100% - 32px));
+    padding: 30px;
+    border: 1px solid var(--v2-border-strong);
+    border-radius: 18px;
+    background: var(--v2-surface);
+    -webkit-backdrop-filter: blur(26px) saturate(150%);
+    backdrop-filter: blur(26px) saturate(150%);
+    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.54);
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -46%) scale(0.94);
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        transform 0.34s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-modal.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-kicker {
+    margin: 0;
+    color: var(--v2-gold);
+    font-size: 0.74rem;
+    font-weight: 820;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.site-modal h2 {
+    margin: 8px 0 10px;
+    color: var(--v2-text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.7rem, 4vw, 2.35rem);
+    line-height: 1.1;
+}
+
+.site-modal > p,
+.portfolio-modal-copy > p {
+    color: var(--v2-muted);
+}
+
+.modal-actions {
+    margin-top: 24px;
+    display: flex;
+    gap: 10px;
+}
+
+.modal-button {
+    min-height: 44px;
+    padding: 10px 15px;
+    border: 1px solid var(--v2-border);
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 760;
+    transition: transform 0.20s ease, border-color 0.20s ease;
+}
+
+.modal-button:hover {
+    transform: translateY(-2px);
+    border-color: var(--v2-border-strong);
+}
+
+.modal-button-primary {
+    background: var(--v2-gold);
+    color: #17130a;
+}
+
+.modal-button-secondary {
+    background: transparent;
+    color: var(--v2-muted);
+}
+
+.portfolio-modal {
+    width: min(620px, calc(100% - 32px));
+    min-height: 320px;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    align-items: center;
+    gap: 22px;
+    overflow: hidden;
+}
+
+.portfolio-modal::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(circle at 18% 50%, rgba(65, 105, 225, 0.20), transparent 42%);
+}
+
+#lottie-warning-player {
+    width: 220px;
+    height: 220px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1050px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero-header {
+        width: calc(100% - 20px);
+        min-height: 84svh !important;
+        margin-top: 10px !important;
+        background-attachment: scroll !important;
+    }
+
+    .site-nav-shell,
+    .site-nav-shell.nav-compact,
+    .site-nav-shell.nav-compact:hover,
+    .site-nav-shell.nav-compact:focus-within,
+    .site-nav-shell.nav-pinned {
+        top: 10px !important;
+        width: calc(100% - 24px) !important;
+        min-height: 54px;
+        padding: 7px 8px 7px 10px !important;
+        border-radius: 14px !important;
+    }
+
+    .desktop-nav {
+        display: none !important;
+    }
+
+    .site-nav-shell.nav-compact:not(:hover):not(:focus-within):not(.nav-pinned) .site-brand-text,
+    .site-nav-shell.nav-compact:not(:hover):not(:focus-within):not(.nav-pinned) .theme-toggle {
+        max-width: initial !important;
+        opacity: 1 !important;
+        pointer-events: auto;
+        transform: none;
+    }
+
+    .site-nav-shell.nav-compact:not(:hover):not(:focus-within):not(.nav-pinned) .nav-actions {
+        gap: 8px !important;
+    }
+
+    .main-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media (max-width: 680px) {
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    .visitor-stats {
+        flex-wrap: wrap;
+    }
+
+    .portfolio-modal {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding-top: 18px;
+    }
+
+    #lottie-warning-player {
+        width: 150px;
+        height: 130px;
+        margin: 0 auto;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+
+    .modal-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-brand-text {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-header {
+        background-attachment: scroll !important;
+    }
+
+    #tsparticles {
+        display: none;
+    }
+
+    .status-dot,
+    .hero-scroll {
+        animation: none !important;
+    }
+}
