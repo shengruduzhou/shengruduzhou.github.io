@@ -1,0 +1,165 @@
+/* =========================================================
+   Ferry UI V2 hotfixes
+   - avatar-only compact navigation
+   - explicit, reliable drawer stacking and visibility
+   ========================================================= */
+
+.site-brand-mark {
+    padding: 0 !important;
+    overflow: hidden;
+    border-radius: 50% !important;
+    background: rgba(255, 215, 112, 0.06) !important;
+}
+
+.site-brand-avatar {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: inherit;
+    transform: scale(1.01);
+}
+
+@media (min-width: 901px) {
+    .site-nav-shell.nav-compact:not(:hover):not(:focus-within):not(.nav-pinned) {
+        width: 62px !important;
+        min-width: 62px;
+        height: 62px;
+        padding: 7px !important;
+        justify-content: center !important;
+        gap: 0 !important;
+        border-radius: 999px !important;
+    }
+
+    .site-nav-shell.nav-compact:not(:hover):not(:focus-within):not(.nav-pinned) .site-brand {
+        width: 48px;
+        min-width: 48px;
+        height: 48px;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .site-nav-shell.nav-compact:not(:hover):not(:focus-within):not(.nav-pinned) .site-brand-mark {
+        width: 48px !important;
+        min-width: 48px;
+        height: 48px !important;
+        border-color: rgba(255, 215, 112, 0.48) !important;
+        box-shadow:
+            0 0 0 3px rgba(255, 215, 112, 0.06),
+            0 10px 24px rgba(0, 0, 0, 0.30);
+    }
+
+    .site-nav-shell.nav-compact:not(:hover):not(:focus-within):not(.nav-pinned) .site-brand-text,
+    .site-nav-shell.nav-compact:not(:hover):not(:focus-within):not(.nav-pinned) .desktop-nav,
+    .site-nav-shell.nav-compact:not(:hover):not(:focus-within):not(.nav-pinned) .nav-actions {
+        width: 0 !important;
+        min-width: 0 !important;
+        max-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        gap: 0 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        overflow: hidden !important;
+        transform: translateY(-4px) scale(0.92) !important;
+    }
+}
+
+.mobile-nav-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 2400 !important;
+    display: block;
+    background: rgba(5, 6, 10, 0.62) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    -webkit-backdrop-filter: blur(7px) saturate(115%);
+    backdrop-filter: blur(7px) saturate(115%);
+    transition: opacity 0.28s ease, visibility 0.28s ease !important;
+}
+
+.mobile-nav-overlay.open {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+.mobile-nav {
+    position: fixed !important;
+    top: 14px !important;
+    right: 14px !important;
+    bottom: 14px !important;
+    left: auto !important;
+    z-index: 2500 !important;
+    display: flex !important;
+    flex-direction: column;
+    width: min(380px, calc(100vw - 28px)) !important;
+    height: auto !important;
+    padding: 20px !important;
+    overflow-y: auto;
+    border: 1px solid var(--v2-border-strong) !important;
+    border-radius: 22px !important;
+    background: var(--v2-surface) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translate3d(calc(100% + 36px), 0, 0) scale(0.98) !important;
+    -webkit-backdrop-filter: blur(26px) saturate(155%);
+    backdrop-filter: blur(26px) saturate(155%);
+    box-shadow: -22px 0 90px rgba(0, 0, 0, 0.52) !important;
+    transition:
+        transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.24s ease,
+        visibility 0.24s ease !important;
+}
+
+.mobile-nav.open,
+.mobile-nav.nav-active,
+.mobile-nav[aria-hidden='false'] {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translate3d(0, 0, 0) scale(1) !important;
+}
+
+.mobile-nav[aria-hidden='true'] {
+    pointer-events: none !important;
+}
+
+.mobile-nav-header {
+    flex: 0 0 auto;
+}
+
+.mobile-nav-links {
+    flex: 1 1 auto;
+    overflow-y: auto;
+}
+
+.mobile-nav-note {
+    flex: 0 0 auto;
+}
+
+@media (max-width: 900px) {
+    .site-brand-mark {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    .mobile-nav {
+        top: 10px !important;
+        right: 10px !important;
+        bottom: 10px !important;
+        width: min(420px, calc(100vw - 20px)) !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-nav-shell,
+    .mobile-nav,
+    .mobile-nav-overlay {
+        transition-duration: 0.01ms !important;
+    }
+}
