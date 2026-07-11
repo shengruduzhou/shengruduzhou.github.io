@@ -1,21 +1,46 @@
-<div class="sidebar">
-    <div class="sidebar-inner"> 
-        <img src="{{ '/picture/icon.jpg' | relative_url }}" alt="Your Avatar" class="avatar" id="home-link">
-        <h1>渡 Ferry</h1>
-        <h2>暗闇で生きている良かった</h2>
-        <p>
-            I am currently a Master's student (Master of Engineering) at Sophia University in Tokyo, Japan.
-            <a href="https://github.com/islab-sophia">@islab.sophia</a>
+<div class="sidebar" data-reveal>
+    <div class="sidebar-inner">
+        <a class="avatar-link" href="{{ '/' | relative_url }}" aria-label="Return to home">
+            <img src="{{ '/picture/icon.jpg' | relative_url }}" alt="Portrait of Shan Hefu" class="avatar">
+        </a>
+
+        <div class="profile-heading">
+            <p class="profile-label">Researcher · Engineer</p>
+            <h2>渡 Ferry</h2>
+            <p class="profile-tagline">暗闇で生きている良かった</p>
+        </div>
+
+        <p class="profile-summary">
+            M.Eng. student in Computer Science at Sophia University, Tokyo. Researching panoramic vision, self-supervised learning, and generative models.
         </p>
-        <div class="social-links">
-            <a href="https://github.com/shengruduzhou" target="_blank">
-                <img src="{{ '/picture/GitHub.png' | relative_url }}" class="social-icon">GitHub
+
+        <dl class="profile-facts">
+            <div>
+                <dt>Focus</dt>
+                <dd>AI · CV · Full Stack</dd>
+            </div>
+            <div>
+                <dt>Lab</dt>
+                <dd><a href="https://github.com/islab-sophia" target="_blank" rel="noopener noreferrer">ISLab Sophia</a></dd>
+            </div>
+            <div>
+                <dt>Location</dt>
+                <dd>Tokyo, Japan</dd>
+            </div>
+        </dl>
+
+        <div class="social-links" aria-label="Social links">
+            <a href="https://github.com/shengruduzhou" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-2c-3 .7-3.6-1.3-3.6-1.3-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.4-.3-4.9-1.2-4.9-5.3 0-1.2.4-2.1 1.1-2.9-.1-.3-.5-1.4.1-2.9 0 0 .9-.3 3 1.1A10.4 10.4 0 0 1 12 6.8a10 10 0 0 1 2.7.4c2.1-1.4 3-1.1 3-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.7 1.1 2.9 0 4.1-2.5 5-4.9 5.3.4.3.7 1 .7 2V21c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg>
+                <span>GitHub</span>
             </a>
-            <a href="https://twitter.com/dudu2027377" target="_blank">
-                <img src="{{ '/picture/Twitter.png' | relative_url }}" class="social-icon">Twitter
+            <a href="https://twitter.com/dudu2027377" target="_blank" rel="noopener noreferrer" aria-label="X profile">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.1l-4.8-6.3L6.6 22H3.5l7.1-8.1L3.2 2h6.2l4.3 5.7L18.9 2Zm-1.1 17.8h1.7L8.5 4H6.7l11.1 15.8Z"/></svg>
+                <span>X</span>
             </a>
-            <a href="mailto:shanhefu@gmail.com">
-                <img src="{{ '/picture/Email.png' | relative_url }}" class="social-icon">Email
+            <a href="mailto:shanhefu@gmail.com" aria-label="Send email">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm9 7.2L20.5 7h-17L12 12.2ZM3 17h18V9.3l-8.5 5.2a1 1 0 0 1-1 0L3 9.3V17Z"/></svg>
+                <span>Email</span>
             </a>
         </div>
     </div>
