@@ -18,6 +18,7 @@
     </script>
     <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/css/site-v2.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/css/site-v2-fixes.css' | relative_url }}">
 </head>
 <body
     data-particles-src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"
@@ -33,7 +34,9 @@
     <header id="hero-header" class="hero-header">
         <div class="site-nav-shell" id="site-nav-shell">
             <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
-                <span class="site-brand-mark" aria-hidden="true">渡</span>
+                <span class="site-brand-mark" aria-hidden="true">
+                    <img class="site-brand-avatar" src="{{ '/picture/icon.jpg' | relative_url }}" alt="">
+                </span>
                 <span class="site-brand-text">Ferry</span>
             </a>
 
@@ -175,5 +178,6 @@
     <script defer src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script defer src="https://busuanzi.9420.ltd/js"></script>
     <script defer src="{{ '/js/site-v2.js' | relative_url }}"></script>
+    <script defer src="{{ '/js/site-v2-fixes.js' | relative_url }}"></script>
 </body>
 </html>
