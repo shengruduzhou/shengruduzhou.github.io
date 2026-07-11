@@ -1,9 +1,17 @@
-<nav class="nav-menu">
-    <ul>
-        <li><a href="{{ '/' | relative_url }}">Home</a></li>
-        <li><a href="{{ '/categories.html' | relative_url }}">Categories</a></li>
-        <li><a href="{{ '/tags.html' | relative_url }}">Tags</a></li>
-        <li><a href="{% post_url 2025-06-05-Introduction %}">About Me</a></li>
-        <li><a href="#" id="top-page-link">Top of Page</a></li>
-    </ul>
+<div class="mobile-nav-overlay" id="mobile-nav-overlay" hidden></div>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="mobile-nav-header">
+        <span class="mobile-nav-title">Navigation</span>
+        <button class="mobile-nav-close" id="mobile-nav-close" type="button" aria-label="Close navigation">×</button>
+    </div>
+    <div class="mobile-nav-links">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/categories.html' | relative_url }}">Notes</a>
+        <a href="{{ '/tags.html' | relative_url }}">Tags</a>
+        <a href="{% post_url 2025-06-05-Introduction %}">About</a>
+        <a href="{{ '/connect-to-me.html' | relative_url }}">Contact</a>
+        <a href="https://shanhefu-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer">Portfolio ↗</a>
+        <a href="https://github.com/shengruduzhou" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    </div>
+    <p class="mobile-nav-note">AI · Computer Vision · Engineering</p>
 </nav>

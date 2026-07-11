@@ -1,129 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>渡 Ferry Personal Website</title>
+    <meta name="color-scheme" content="dark light">
+    <meta name="theme-color" content="#121212">
+    <meta name="description" content="{{ page.description | default: site.description | strip_html | escape }}">
+    <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
     <script>
-        (function() {
-            var theme = localStorage.getItem('theme') || 'dark';
-            document.documentElement.setAttribute('data-theme', theme);
-        })();
+        (function () {
+            var savedTheme = localStorage.getItem('theme');
+            var systemTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            document.documentElement.dataset.theme = savedTheme || systemTheme;
+            document.documentElement.classList.add('js');
+        }());
     </script>
-    <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}" type="text/css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
 </head>
-<body>
-    <div class="theme-switch-wrapper">
-        <label class="theme-switch" for="theme-checkbox">
-            <input type="checkbox" id="theme-checkbox" />
-            <div class="slider round">
-                <div class="sun"></div>
-                <div class="moon"></div>
-            </div>
-        </label>
+<body data-particles-src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <div class="ambient-layer" aria-hidden="true">
+        <div id="tsparticles"></div>
+        <div class="ambient-grid"></div>
     </div>
 
-    <div id="tsparticles"></div>
+    <header id="hero-header" class="hero-header">
+        <div class="site-nav-shell">
+            <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
+                <span class="site-brand-mark" aria-hidden="true">渡</span>
+                <span class="site-brand-text">Ferry</span>
+            </a>
 
-    <header id="hero-header">
-        <nav class="main-nav">
-            <a href="{{ '/' | relative_url }}">HOME</a>
-            <a href="{{ '/portfolio.html' | relative_url }}">Portfolio</a>
-            <a href="{{ '/connect-to-me.html' | relative_url }}">Contact</a>
-            <a href="{% post_url 2025-06-05-Introduction %}">About Me</a>
-            <a href="https://github.com/shengruduzhou" target="_blank">Github</a>
-        </nav>
+            <nav class="desktop-nav" aria-label="Primary navigation">
+                <a href="{{ '/' | relative_url }}">Home</a>
+                <a href="{{ '/categories.html' | relative_url }}">Notes</a>
+                <a href="{% post_url 2025-06-05-Introduction %}">About</a>
+                <a href="{{ '/connect-to-me.html' | relative_url }}">Contact</a>
+                <a href="https://shanhefu-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer">Portfolio</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="icon-button theme-toggle" id="theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">
+                    <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm0-4a2 2 0 1 1 0-4 2 2 0 0 1 0 4ZM11 1h2v3h-2V1Zm0 19h2v3h-2v-3ZM3.5 4.9l1.4-1.4L7 5.6 5.6 7 3.5 4.9Zm13.5 13.5 1.4-1.4 2.1 2.1-1.4 1.4-2.1-2.1ZM1 11h3v2H1v-2Zm19 0h3v2h-3v-2ZM3.5 19.1 5.6 17 7 18.4l-2.1 2.1-1.4-1.4ZM17 5.6l2.1-2.1 1.4 1.4L18.4 7 17 5.6Z"/></svg>
+                    <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.7 15.1A8 8 0 0 1 8.9 3.3 9 9 0 1 0 20.7 15Z"/></svg>
+                </button>
+                <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-controls="mobile-nav" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="hero-content">
+            <p class="hero-kicker"><span class="status-dot"></span> Sophia University · Computer Vision</p>
+            <h1>渡 Ferry</h1>
+            <p class="hero-lead">Exploring panoramic vision, self-supervised learning, generative AI, and the systems that connect them.</p>
+            <div class="hero-actions">
+                <a class="button button-primary" href="#main-content">Explore notes</a>
+                <a class="button button-secondary" href="https://github.com/shengruduzhou" target="_blank" rel="noopener noreferrer">View GitHub</a>
+            </div>
+        </div>
+        <a class="hero-scroll" href="#main-content" aria-label="Scroll to main content">
+            <span>Scroll</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </a>
     </header>
 
-    <div id="main-content-wrapper">
+    {% include nav-menu.html %}
+
+    <main id="main-content" class="main-content-wrapper">
         <div class="main-grid">
-            <aside class="grid-sidebar-container">
+            <aside class="grid-sidebar-container" aria-label="Profile summary">
                 {% include sidebar.html %}
             </aside>
 
-            <main class="grid-content-container">
+            <section class="grid-content-container">
                 <div class="content">
                     <div class="content-inner">
                         {{ content }}
                     </div>
                 </div>
-            </main>
+            </section>
         </div>
-    </div>
+    </main>
 
-    <button id="page-nav-button">
-        <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path></svg>
-        <span class="button-text">To main content</span>
+    <button id="page-nav-button" class="page-nav-button" type="button" aria-label="Scroll to main content">
+        <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        <span class="button-text">Content</span>
     </button>
 
-    <footer id="page-footer">
+    <footer id="page-footer" class="page-footer">
         <div class="footer-grid">
-            <div class="footer-left">
-                <p>Powered by <strong>Jekyll</strong></p>
-                <p>Theme by <strong>渡 Ferry</strong></p>
+            <div>
+                <a class="footer-brand" href="{{ '/' | relative_url }}">渡 Ferry</a>
+                <p>Personal notes on AI, vision, engineering, and research.</p>
             </div>
-            <div class="footer-center">
-                <p>&copy; 2025 {{ site.title }}. All Rights Reserved.</p>
-                <p id="runtime_span"></p> </div>
-            <div class="footer-right">
-            <div class="visitor-stats">
-                <span class="stat-item">
-                    <span class="stat-label">Unique Visitor</span>
-                    <span id="busuanzi_site_uv" class="stat-value"><i class="loading-icon"></i></span>
-                </span>
-                <span class="stat-item">
-                    <span class="stat-label">Page View</span>
-                    <span id="busuanzi_site_pv" class="stat-value"><i class="loading-icon"></i></span>
-                </span>
-                </div>
+            <div class="footer-meta">
+                <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}</p>
+                <p id="runtime_span">Online since 2025</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/shengruduzhou" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="{{ '/connect-to-me.html' | relative_url }}">Contact</a>
+                <a href="#hero-header">Top</a>
             </div>
         </div>
     </footer>
 
-    <div class="modal-overlay" id="modal-overlay"></div>
-    <div class="theme-modal" id="theme-modal">
-        <h3>Caution: Light mode ahead!</h3>
-        <p>XD <span style="color:red;">!!!Please don't try this at home!!!</span> lol</p>
-        <div>
-            <button class="modal-button go-light-btn" id="go-light-btn">Go Light</button>
-            <button class="modal-button cancel-btn" id="cancel-btn">Cancel</button>
-        </div>
-    </div>
-
-    <div class="portfolio-modal" id="portfolio-modal">
-        <lottie-player
-        id="lottie-warning-player"
-        src="{{ '/assets/lottie/System_Error_01.json' | relative_url }}"
-        background="transparent"
-        speed="1"
-        style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: -1;"
-        loop>
-        </lottie-player>
-        <h3>!!! WARNING !!!</h3>
-        <p>
-            !!! THINKING TWICE !!!<br>
-            !!! YOU ARE ABOUT TO ENTER UNKOWN TERRITORY !!!
-        </p>
-        <div>
-            <button class="modal-button portfolio-confirm-btn" id="portfolio-confirm-btn">ENTER</button>
-            <button class="modal-button portfolio-cancel-btn" id="portfolio-cancel-btn">CANCEL</button>
-        </div>
-    </div>
-
-    {% include nav-menu.html %}
-    <div class="menu-toggle">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
-
+    <script defer src="{{ '/js/script.js' | relative_url }}"></script>
 </body>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script defer src="https://busuanzi.9420.ltd/js"></script>
-    <script src="{{ '/js/script.js' | relative_url }}"></script>
-    <script src="{{ '/js/theme.js' | relative_url }}"></script>
-    <script src="{{ '/js/animations.js' | relative_url }}"></script>
 </html>
