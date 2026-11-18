@@ -80,6 +80,13 @@
             <div class="hero-actions">
                 <a class="button button-primary" href="#main-content">Explore notes</a>
                 <a class="button button-secondary" href="https://github.com/shengruduzhou" target="_blank" rel="noopener noreferrer">View GitHub</a>
+                <details class="hero-cv-picker">
+                    <summary class="button button-secondary" aria-label="Choose CV language">CV <span class="hero-cv-chevron" aria-hidden="true">⌄</span></summary>
+                    <div class="hero-cv-menu" aria-label="CV versions">
+                        <a href="{{ '/assets/CV.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer"><strong>English CV</strong><span>Engineering · PDF</span></a>
+                        <a href="{{ '/assets/CV_CN.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer" lang="zh-CN"><strong>中文简历</strong><span>简体中文 · PDF</span></a>
+                    </div>
+                </details>
             </div>
         </div>
 

@@ -15,6 +15,33 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Compile bilingual CVs (XeLaTeX)
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: |
+            CV_EN.tex
+            CV_CN.tex
+          working_directory: cv-src
+          latexmk_use_xelatex: true
+          texlive_version: 2026
+
+      - name: Update CV assets from compiled sources
+        run: |
+          test -s cv-src/CV_EN.pdf
+          test -s cv-src/CV_CN.pdf
+          cp cv-src/CV_EN.pdf assets/CV.pdf
+          cp cv-src/CV_CN.pdf assets/CV_CN.pdf
+
+      - name: Commit generated PDFs to source branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/CV.pdf assets/CV_CN.pdf
+          if ! git diff --cached --quiet; then
+            git commit -m "docs(cv): regenerate bilingual PDFs [skip ci]"
+            git push origin HEAD:main
+          fi
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
