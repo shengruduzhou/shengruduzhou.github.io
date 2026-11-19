@@ -1,0 +1,59 @@
+% !TEX program = xelatex
+% Hefu Shan — academic/research and engineering CV (November 2026).
+% Based on the MIT-licensed billryan/resume class; no font files included.
+% Compile with XeLaTeX; keep this .tex and resume.cls in the same folder.
+\documentclass{resume}
+\hypersetup{pdftitle={Hefu Shan - Curriculum Vitae},pdfauthor={Hefu Shan},pdfsubject={Research, Machine Learning and Software Engineering}}
+\begin{document}
+\pagenumbering{gobble}
+\name{Hefu Shan}
+\basicInfo{\faMapMarker\ Tokyo, Japan / Beijing, China \quad\textperiodcentered\quad
+  \faEnvelopeO\ \href{mailto:shanhefu@gmail.com}{shanhefu@gmail.com} \quad\textperiodcentered\quad
+  \faPhone\ (+81) 080-7417-1012}
+\secondInfo{\faGithub\ \href{https://github.com/shengruduzhou}{github.com/shengruduzhou} \quad\textperiodcentered\quad
+  \faGlobe\ \href{https://shengruduzhou.github.io/}{shengruduzhou.github.io} \quad\textperiodcentered\quad
+  \href{https://shanhefu-portfolio.vercel.app/}{Portfolio} \quad\textperiodcentered\quad
+  \faLinkedin\ \href{https://linkedin.com/in/hefu-shan-054b24361/}{LinkedIn}}
+\vspace{-1.9pt}
+
+\sectionwithicon{\faGraduationCap}{Education}
+\datedsubsection{Sophia University, Tokyo, Japan}{Apr. 2025 -- Present}
+\role{Master of Science in Artificial Intelligence (Computer Vision), expected Mar. 2027}
+\vspace{4pt}
+\datedsubsection{Teikyo University, Utsunomiya, Japan}{Apr. 2021 -- Mar. 2025}
+\role{Bachelor of Science in Information and Electronics Engineering}
+
+\sectionwithicon{\faLightbulbO}{Research Interests}
+Self-Supervised Learning; Representation Learning; Panoramic Images; Spherical Geometry.
+
+\sectionwithicon{\faFlask}{Research Experience}
+\datedsubsection{PanoMAE --- Self-Supervised Learning for Panoramic Vision}{Jun. 2025 -- Present}
+\role{Graduate Research, Sophia University \quad\textperiodcentered\quad \href{https://github.com/islab-sophia-edu/2026-SHAN-HEFU/issues}{Research Notes}}
+\begin{itemize}
+  \item Developed a masked-autoencoding framework for panoramic images using tangent-plane sampling, spherical positional encoding, and geometry-aware attention.
+  \item Evaluated learned representations on classification, semantic segmentation, depth and surface-normal estimation; studied geometric ablations and rotation robustness.
+\end{itemize}
+
+\sectionwithicon{\faCode}{Selected Projects}
+\cvproj{\href{https://github.com/shengruduzhou/QuantAgent}{QuantAgent}}{2026 -- Present}
+ {Python, Qlib, Polars, FastAPI, React}{Built a point-in-time A-share research system with walk-forward evaluation, cost-aware backtesting and portfolio risk controls.}
+\cvproj{\href{https://github.com/shengruduzhou/FormulaForge}{FormulaForge}}{2026 -- Present}
+ {TypeScript, React, Node.js, LaTeX, LLM APIs}{Developed a formula-analysis tool combining LaTeX parsing, screenshot/OCR input and structured multimodal explanations.}
+\cvproj{\href{https://github.com/shengruduzhou/Feedback_System}{Online Course Feedback System}}{Apr. 2024 -- May 2025}
+ {Bachelor's Thesis \quad\textperiodcentered\quad Flask, React, MySQL, ARIMA}{Developed a web application for analyzing and visualizing student concentration and classroom feedback.}
+\cvproj{T-net Classroom Question System}{2023}
+ {Group Project \quad\textperiodcentered\quad Java, Spring Boot, JavaScript, CSS, MySQL}{Built a web-based quiz system supporting true/false questions and automatic score calculation.}
+\cvproj{Blog and Portfolio}{May 2025 -- Present}
+ {Jekyll, React, TypeScript, CSS, GSAP}{Created a \href{https://shengruduzhou.github.io/}{technical blog} and an \href{https://shanhefu-portfolio.vercel.app/}{interactive portfolio} to document projects and research.}
+
+\sectionwithicon{\faCogs}{Technical Skills}
+\textbf{Programming:} Python, Java, JavaScript/TypeScript, SQL\\
+\textbf{Machine Learning:} PyTorch, OpenCV, NumPy, pandas, scikit-learn, Vision Transformers\\
+\textbf{Software and Data:} React, FastAPI, Flask, Spring Boot, Node.js, Polars, MySQL, PostgreSQL\\
+\textbf{Tools:} Linux, Git, Docker, CUDA, Conda, \LaTeX
+
+\sectionwithicon{\faTrophy}{Honors and Additional Information}
+\textbf{Scholarship:} Japan Student Services Organization (JASSO), recipient (2021).\\
+\textbf{Recognition:} Rotary Yoneyama Memorial Scholarship, final interview nominee (2023).\\
+\textbf{Languages:} Chinese (native); Japanese (fluent); English (intermediate, TOEIC 610).
+\end{document}
