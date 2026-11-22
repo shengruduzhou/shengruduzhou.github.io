@@ -1,0 +1,61 @@
+% !TEX program = xelatex
+% 中文工程简历 — 改编自 billryan/resume（MIT License）。
+% 请使用 XeLaTeX 编译；不能使用 pdfLaTeX。
+\documentclass{resume}
+\usepackage{xeCJK}
+\IfFontExistsTF{Noto Serif CJK SC}{\setCJKmainfont{Noto Serif CJK SC}}{\setCJKmainfont{FandolSong-Regular}}
+\IfFontExistsTF{Noto Sans CJK SC}{\setCJKsansfont{Noto Sans CJK SC}}{\setCJKsansfont{FandolHei-Regular}}
+\hypersetup{pdftitle={单赫夫 - 中文工程简历},pdfauthor={单赫夫},pdfsubject={计算机视觉、机器学习与软件工程}}
+\begin{document}
+\pagenumbering{gobble}
+\name{单赫夫}
+\basicInfo{\faMapMarker\ 日本东京 / 中国北京 \quad\textperiodcentered\quad
+  \faEnvelopeO\ \href{mailto:shanhefu@gmail.com}{shanhefu@gmail.com} \\[1pt]
+  \faPhone\ (+81) 080-7417-1012 \quad\textperiodcentered\quad \faPhone\ +86 18610916979}
+\secondInfo{\faGithub\ \href{https://github.com/shengruduzhou}{github.com/shengruduzhou} \quad\textperiodcentered\quad
+  \faGlobe\ \href{https://shengruduzhou.github.io/}{shengruduzhou.github.io} \quad\textperiodcentered\quad
+  \href{https://shanhefu-portfolio.vercel.app/}{作品集} \quad\textperiodcentered\quad
+  \faLinkedin\ \href{https://linkedin.com/in/hefu-shan-054b24361/}{LinkedIn}}
+\vspace{-1.9pt}
+
+\sectionwithicon{\faGraduationCap}{教育背景}
+\datedsubsection{上智大学（Sophia University）\quad 日本东京}{2025年4月 -- 至今}
+\role{人工智能理学硕士（计算机视觉方向），预计2027年3月毕业}
+\vspace{4pt}
+\datedsubsection{帝京大学（Teikyo University）\quad 日本宇都宫}{2021年4月 -- 2025年3月}
+\role{信息与电子工程理学学士}
+
+\sectionwithicon{\faLightbulbO}{研究兴趣}
+自监督学习（Self-Supervised Learning）；表征学习（Representation Learning）；全景图像；球面几何。
+
+\sectionwithicon{\faFlask}{研究经历}
+\datedsubsection{PanoMAE —— 全景视觉自监督表征学习}{2025年6月 -- 至今}
+\role{上智大学硕士研究 \quad\textperiodcentered\quad \href{https://github.com/islab-sophia-edu/2026-SHAN-HEFU/issues}{研究记录}}
+\begin{itemize}
+  \item 基于 PyTorch 构建全景图像掩码自编码框架，结合切平面采样、球面位置编码与几何感知注意力机制。
+  \item 在场景分类、语义分割、深度估计与表面法线估计任务上评估预训练表征，并开展几何模块消融及旋转鲁棒性实验。
+\end{itemize}
+
+\sectionwithicon{\faCode}{精选项目}
+\cvproj{\href{https://github.com/shengruduzhou/QuantAgent}{QuantAgent —— A股量化研究系统}}{2026年 -- 至今}
+ {Python, Qlib, Polars, FastAPI, React}{构建具有时点一致性（PIT）数据校验、滚动样本外评估、交易成本回测与组合风险约束的研究系统。}
+\cvproj{\href{https://github.com/shengruduzhou/FormulaForge}{FormulaForge —— 学术公式分析工具}}{2026年 -- 至今}
+ {TypeScript, React, Node.js, LaTeX, LLM APIs}{开发支持 LaTeX 解析、公式截图/OCR 输入和多模态模型结构化解释的网页工具。}
+\cvproj{\href{https://github.com/shengruduzhou/Feedback_System}{在线课程反馈系统}}{2024年4月 -- 2025年5月}
+ {本科毕业设计 \quad\textperiodcentered\quad Flask, React, MySQL, ARIMA}{开发用于分析和可视化学生课堂注意力与课程反馈数据的 Web 应用。}
+\cvproj{T-net 课堂测验系统}{2023年}
+ {小组项目 \quad\textperiodcentered\quad Java, Spring Boot, JavaScript, CSS, MySQL}{实现支持判断题、自动评分及结果记录的课堂在线测验系统。}
+\cvproj{技术博客与个人作品集}{2025年5月 -- 至今}
+ {Jekyll, React, TypeScript, CSS, GSAP}{搭建\href{https://shengruduzhou.github.io/}{技术博客}及\href{https://shanhefu-portfolio.vercel.app/}{交互式作品集}，用于整理研究笔记与工程项目。}
+
+\sectionwithicon{\faCogs}{技术能力}
+\textbf{编程语言：}Python、Java、JavaScript/TypeScript、SQL\\
+\textbf{机器学习：}PyTorch、OpenCV、NumPy、pandas、scikit-learn、Vision Transformer\\
+\textbf{工程与数据：}React、FastAPI、Flask、Spring Boot、Node.js、Polars、MySQL、PostgreSQL\\
+\textbf{开发工具：}Linux、Git、Docker、CUDA、Conda、\LaTeX
+
+\sectionwithicon{\faTrophy}{奖学金与其他信息}
+\textbf{奖学金：}日本学生支援机构（JASSO）奖学金获得者（2021年）。\\
+\textbf{其他经历：}米山纪念奖学金最终面试候选者（2023年；非获奖）。\\
+\textbf{语言能力：}中文（母语）、日语（流利）、英语（中级，TOEIC 610）。
+\end{document}
